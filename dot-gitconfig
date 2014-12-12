@@ -1,0 +1,19 @@
+[user]
+	name = Diego Ongaro
+	email = ongardie@gmail.com
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	grep = auto
+[push]
+	config = tracking
+	default = nothing
+[core]
+	excludesfile = ~/.gitignore
+[alias]
+	lol = log --graph --decorate --pretty=oneline --abbrev-commit
+	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+	fa = fetch --all --prune
+[diff]
+	renames = true
