@@ -27,5 +27,5 @@ color() {
 # \u@\h:
 PS1="${debian_chroot:+($debian_chroot)}\w\$(parse_git_branch)\$ "
 XTERM_TITLE="\w\$(parse_git_branch)"
-PS1="$(color 0 32 "$PS1")" # make prompt green
+PS1="$(color 0 ${PS1_COLOR:-32} "$PS1")" # make prompt green
 PS1="$(nonprintable '\e]0;'$XTERM_TITLE'\a')$PS1" # set window title
