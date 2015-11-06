@@ -8,6 +8,8 @@ git
 glibc-doc
 hdparm
 ipython
+libtool
+libtool-bin
 llvm
 lsof
 manpages-posix-dev
