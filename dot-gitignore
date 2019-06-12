@@ -1,0 +1,10 @@
+*.pyc
+.*.swp
+.Rhistory
+.vscode/
+.~lock.*\#
+__pycache__/
+cachegrind.out.*
+callgrind.out.*
+extra/
+tags
