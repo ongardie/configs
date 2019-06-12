@@ -16,16 +16,11 @@ manpages-posix-dev
 nmap
 parted
 pv
-python3
 rsync
 screen
 tcpdump
 tmux
 tree
-unrar
 unzip
 vim
-wireless-tools
-wpasupplicant
 zip
-zsh
