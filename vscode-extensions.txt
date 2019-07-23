@@ -1,0 +1,5 @@
+ms-python.python
+ms-vscode.go
+stkb.rewrap
+streetsidesoftware.code-spell-checker
+vscodevim.vim
