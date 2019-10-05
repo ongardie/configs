@@ -23,9 +23,18 @@ color() {
   echo "$(nonprintable '\e['$1';'$2'm')$3$(nonprintable '\e[m')"
 }
 
-# [\$(date +%H:%M:%S)].
-# \u@\h:
-PS1="${debian_chroot:+($debian_chroot)}\w\$(parse_git_branch)\$ "
-XTERM_TITLE="\w\$(parse_git_branch)"
-PS1="$(color 0 ${PS1_COLOR:-32} "$PS1")" # make prompt green
-PS1="$(nonprintable '\e]0;'$XTERM_TITLE'\a')$PS1" # set window title
+prompt_command() {
+  status=$?
+  git=$(parse_git_branch)
+  visible="\w$git\$ "
+  if [ $status -eq 0 ]; then
+    colored=$(color 0 32 "$visible")
+  else
+    warning=$(color 0 31 "Command exited with status $status")
+    colored=$warning'\n'$(color 0 31 "$visible")
+  fi
+  xterm_title=$(nonprintable '\e]0;\w'$git'\a')
+  PS1="$xterm_title$colored"
+}
+
+PROMPT_COMMAND='prompt_command'
