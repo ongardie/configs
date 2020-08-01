@@ -1,0 +1,34 @@
+# This is a configuration file for the xfce4-terminal.
+# It goes in `~/.config/xfce4/terminal/terminalrc`.
+# The colors are borrowed from VS Code's Dark+ theme.
+
+[Configuration]
+ColorBackground=#1e1e1e
+ColorPalette=rgb(68,68,68);rgb(205,49,49);rgb(13,188,121);rgb(229,229,16);rgb(36,114,200);rgb(188,63,188);rgb(17,168,205);rgb(229,229,229);rgb(102,102,102);rgb(241,76,76);rgb(35,209,139);rgb(245,245,67);rgb(59,142,234);rgb(214,112,214);rgb(41,184,219);rgb(255,255,255)
+MiscAlwaysShowTabs=FALSE
+MiscBell=FALSE
+MiscBellUrgent=FALSE
+MiscBordersDefault=TRUE
+MiscConfirmClose=TRUE
+MiscCopyOnSelect=FALSE
+MiscCursorBlinks=FALSE
+MiscCursorShape=TERMINAL_CURSOR_SHAPE_BLOCK
+MiscCycleTabs=TRUE
+MiscDefaultGeometry=120x48
+MiscHighlightUrls=TRUE
+MiscInheritGeometry=FALSE
+MiscMenubarDefault=FALSE
+MiscMiddleClickOpensUri=FALSE
+MiscMouseAutohide=FALSE
+MiscMouseWheelZoom=TRUE
+MiscNewTabAdjacent=TRUE
+MiscRewrapOnResize=TRUE
+MiscShowRelaunchDialog=TRUE
+MiscSlimTabs=FALSE
+MiscTabCloseButtons=TRUE
+MiscTabCloseMiddleClick=TRUE
+MiscTabPosition=GTK_POS_TOP
+MiscToolbarDefault=FALSE
+MiscUseShiftArrowsToScroll=FALSE
+ScrollingLines=100000
+ScrollingOnOutput=FALSE
