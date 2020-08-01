@@ -52,7 +52,7 @@ prompt_command() {
   # End
   prompt=$prompt$(color 1 37 '\$ ')
 
-  xterm_title=$(nonprintable '\e]0;'$title'\a')
+  xterm_title=$(nonprintable '\e]2;'$title'\a')
   PS1="$xterm_title$prompt"
 }
 
