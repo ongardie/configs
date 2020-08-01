@@ -1,3 +1,7 @@
+# This is intended to be used as a global `.gitignore` file. It can be
+# installed with
+# `git config --global core.excludesfile ~/configs/dot-gitignore`.
+
 *.pyc
 .*.swp
 .Rhistory

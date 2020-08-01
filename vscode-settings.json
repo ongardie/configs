@@ -1,20 +1,35 @@
+// This contains settings for the VS Code or VSCodium editor. It's allowed to
+// have comments (open it as "JSON with Comments"). It goes in
+// `~/.config/VSCodium/User/settings.json` or similar on Linux.
 {
     "cSpell.diagnosticLevel": "Hint",
     "cSpell.allowCompoundWords": true,
+    "editor.formatOnSave": true,
     "editor.minimap.enabled": false,
     "editor.renderWhitespace": "boundary",
+    "editor.rulers": [
+        80
+    ],
+    "eslint.run": "onSave",
     "files.insertFinalNewline": true,
     "files.trimTrailingWhitespace": true,
     "files.watcherExclude": {
-        "**/.git/objects/**": true,
-        "**/.git/subtree-cache/**": true,
+        "**/.git/**": true,
+        "**/.rpt2_cache/**": true,
         "**/node_modules/**": true,
-        "**/env/**": true,
+        "**/env/**": true
     },
     "telemetry.enableTelemetry": false,
     "telemetry.enableCrashReporter": false,
     "vim.handleKeys": {
-        "<C-f>": false,
+        "<C-f>": false
     },
     "window.zoomLevel": 1,
+    "javascript.suggest.autoImports": false,
+    "typescript.suggest.autoImports": false,
+    "typescript.surveys.enabled": false,
+    "[typescript]": {
+        "editor.autoClosingBrackets": "never",
+        "editor.autoClosingQuotes": "never"
+    }
 }

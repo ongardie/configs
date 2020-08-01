@@ -1,4 +1,6 @@
-""" Undeniably better default settings
+" This is a basic configuration file for the Vim text editor. It's normally
+" installed to `~/.vimrc` or can be included from there using
+" `source ~/configs/.vimrc`.
 
 " Don't use Vi compatibility mode
 set nocompatible
@@ -28,7 +30,3 @@ set splitright
 " When tab-completing things, list all matches and complete through the common
 " prefix
 set wildmode=list:longest
-
-
-
-

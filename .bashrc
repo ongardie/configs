@@ -1,13 +1,11 @@
-export EDITOR=vim
-
 parse_git_branch() {
   ref=$(git symbolic-ref HEAD -q 2>/dev/null)
   st=$?
   if [ $st -eq 1 ]; then
-    echo ":~~detached~~"
+    echo "~~detached~~"
   elif [ $st -eq 0 ]; then
-    echo ":${ref#refs/heads/}"
-  fi  
+    echo "${ref#refs/heads/}"
+  fi
 }
 
 nonprintable() {
@@ -15,6 +13,7 @@ nonprintable() {
   # problems with text wrapping
   echo '\['$1'\]'
 }
+
 color() {
   # $1 is color intensity (0 for normal or 1 for bright/bold)
   # $2 should be 30 for black, 31 for red, 32 for green, 33 for yellow,
@@ -26,15 +25,35 @@ color() {
 prompt_command() {
   status=$?
   git=$(parse_git_branch)
-  visible="\w$git\$ "
-  if [ $status -eq 0 ]; then
-    colored=$(color 0 32 "$visible")
-  else
-    warning=$(color 0 31 "Command exited with status $status")
-    colored=$warning'\n'$(color 0 31 "$visible")
+  title=''
+  prompt=''
+
+  # Print warning when previous command fails.
+  if [ $status -ne 0 ]; then
+    prompt=$(color 0 31 "Command exited with status $status")'\n'
   fi
-  xterm_title=$(nonprintable '\e]0;\w'$git'\a')
-  PS1="$xterm_title$colored"
+
+  # Username and host
+  if [ -n "$SSH_CLIENT" ] || [ -n "$SUDO_USER" ]; then
+    prompt=$prompt$(color 0 33 '\u@\h'):
+    title=$title'\u@\h':
+  fi
+
+  # Working directory
+  prompt=$prompt$(color 0 32 '\w')
+  title=$title'\w'
+
+  # Git branch
+  if [ -n "$git" ]; then
+    prompt=$prompt:$(color 0 33 "$git")
+    title=$title":$git"
+  fi
+
+  # End
+  prompt=$prompt'\$ '
+
+  xterm_title=$(nonprintable '\e]0;'$title'\a')
+  PS1="$xterm_title$prompt"
 }
 
 PROMPT_COMMAND='prompt_command'

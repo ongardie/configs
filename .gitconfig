@@ -1,0 +1,23 @@
+[alias]
+	lola = log --graph --oneline --decorate --all
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	grep = auto
+[core]
+	excludesfile = ~/.gitignore
+[diff]
+	renames = true
+[init]
+	defaultBranch = main
+[pull]
+	ff = only
+[push]
+	config = tracking
+	default = nothing
+[rebase]
+	autostash = true
+[user]
+	#name = First Last
+	#email = user@domain.tld
