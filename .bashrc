@@ -30,27 +30,27 @@ prompt_command() {
 
   # Print warning when previous command fails.
   if [ $status -ne 0 ]; then
-    prompt=$(color 0 31 "Command exited with status $status")'\n'
+    prompt=$(color 1 31 "Command exited with status $status")'\n'
   fi
 
   # Username and host
   if [ -n "$SSH_CLIENT" ] || [ -n "$SUDO_USER" ]; then
-    prompt=$prompt$(color 0 33 '\u@\h'):
+    prompt=$prompt$(color 1 33 '\u@\h')$(color 1 37 ':')
     title=$title'\u@\h':
   fi
 
   # Working directory
-  prompt=$prompt$(color 0 32 '\w')
+  prompt=$prompt$(color 1 32 '\w')
   title=$title'\w'
 
   # Git branch
   if [ -n "$git" ]; then
-    prompt=$prompt:$(color 0 33 "$git")
+    prompt=$prompt$(color 1 37 ':')$(color 1 33 "$git")
     title=$title":$git"
   fi
 
   # End
-  prompt=$prompt'\$ '
+  prompt=$prompt$(color 1 37 '\$ ')
 
   xterm_title=$(nonprintable '\e]0;'$title'\a')
   PS1="$xterm_title$prompt"
