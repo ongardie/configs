@@ -25,4 +25,4 @@ or the [Open VSX Registry](https://open-vsx.org/).
 The extensions can be installed with `codium --install-extension ID` or
 inside VSCodium with `ext install ID` in the "Go to File..." menu (Ctrl-P).
 
-See `vscode-settings.json` for configuration settings.
+See `vscodium-settings.json` for configuration settings.
