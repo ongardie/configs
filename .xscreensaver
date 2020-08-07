@@ -1,0 +1,18 @@
+# XScreenSaver preferences file. Save as `~/.xscreensaver`.
+
+timeout:         0:09:00
+cycle:           0:10:00
+lock:            True
+lockTimeout:     0:01:00
+passwdTimeout:   0:00:30
+verbose:         False
+splash:          False
+# Note: The value of newLoginCommand is intentionally empty.
+newLoginCommand:
+fade:            False
+dpmsEnabled:     True
+dpmsQuickOff:    False
+dpmsStandby:     0:10:00
+dpmsSuspend:     0:10:00
+dpmsOff:         0:20:00
+mode:            blank
