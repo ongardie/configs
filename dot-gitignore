@@ -2,6 +2,7 @@
 # installed with
 # `git config --global core.excludesfile ~/configs/dot-gitignore`.
 
+.nobck
 *.pyc
 .*.swp
 .Rhistory

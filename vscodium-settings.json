@@ -4,6 +4,7 @@
 {
     "cSpell.diagnosticLevel": "Hint",
     "cSpell.allowCompoundWords": true,
+    "diffEditor.ignoreTrimWhitespace": false,
     "editor.formatOnSave": true,
     "editor.minimap.enabled": false,
     "editor.renderWhitespace": "boundary",
@@ -21,10 +22,13 @@
     },
     "telemetry.enableTelemetry": false,
     "telemetry.enableCrashReporter": false,
+    "update.mode": "none",
     "vim.handleKeys": {
         "<C-f>": false
     },
     "window.zoomLevel": 1,
+
+    "html.autoClosingTags": false,
     "javascript.suggest.autoImports": false,
     "typescript.suggest.autoImports": false,
     "typescript.surveys.enabled": false,

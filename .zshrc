@@ -8,6 +8,7 @@ HISTFILE=~/.zsh_history
 # Completion
 autoload -Uz compinit
 compinit
+setopt GLOBDOTS
 # Copied from Debian's /etc/zsh/newuser.zshrc.recommended
 zstyle ':completion:*' auto-description 'specify: %d'
 zstyle ':completion:*' completer _expand _complete _correct _approximate
@@ -43,7 +44,8 @@ zle-keymap-select () {
   zle reset-prompt
 }
 zle -N zle-keymap-select
-
+# Re-enable Ctrl-R searching through history
+bindkey '^R' history-incremental-search-backward
 
 # Set up prompt
 parse_git_branch() {
@@ -61,8 +63,8 @@ prompt_command() {
   visible='%B'
 
   # Print warning when previous command fails.
-  if [ $status -ne 0 ]; then
-    visible=$visible'%F{red}Command exited with status $st%f'$'\n'
+  if [ $st -ne 0 ]; then
+    visible=$visible"%F{red}Command exited with status $st%f\n"
   fi
 
   # Username and host
