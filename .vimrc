@@ -14,6 +14,10 @@ set backspace=indent,eol,start
 " Highlight all search matches
 set hlsearch
 
+" Show some non-printable characters (like tabs)
+set list
+set listchars=tab:>-,trail:.,extends:>
+
 " Only insert one space after periods when joining lines
 set nojoinspaces
 
@@ -30,3 +34,19 @@ set splitright
 " When tab-completing things, list all matches and complete through the common
 " prefix
 set wildmode=list:longest
+
+if has("gui_running")
+  " Set theme
+  colorscheme desert
+
+  " Increase font size
+  set guifont=Bitstream\ Vera\ Sans\ Mono\ 12
+
+  " Hide menu and toolbar
+  set guioptions-=m
+  set guioptions-=T
+
+  " Make Ctrl-S save the current tab
+  nmap <C-s> :w<CR>
+  imap <C-s> <Esc><C-S>
+endif
