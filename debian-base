@@ -24,11 +24,15 @@ lz4
 manpages-posix-dev
 nano
 net-tools
+nethogs
 nmap
 openssh-server
 parted
 pv
+python3
 python3-pip
+python3-venv
+python3-wheel
 rsync
 s-tui
 sl
