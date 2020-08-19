@@ -4,6 +4,9 @@
 {
     "cSpell.diagnosticLevel": "Hint",
     "cSpell.allowCompoundWords": true,
+    "cSpell.userWords": [
+        "ongardie"
+    ],
     "diffEditor.ignoreTrimWhitespace": false,
     "editor.formatOnSave": true,
     "editor.minimap.enabled": false,
@@ -27,7 +30,9 @@
         "<C-f>": false
     },
     "window.zoomLevel": 1,
+    "workbench.editor.closeOnFileDelete": true,
 
+    "go.formatTool": "goimports",
     "html.autoClosingTags": false,
     "javascript.suggest.autoImports": false,
     "typescript.suggest.autoImports": false,

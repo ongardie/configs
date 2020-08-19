@@ -15,6 +15,8 @@ case ":$PATH:" in
 esac
 
 export BROWSER="$HOME/bin/firefox"
+export LESSSECURE='1'
+export LC_COLLATE='C'
 export PAGER='less --chop-long-lines --jump-target=5 --no-init --RAW-CONTROL-CHARS --quit-if-one-screen --shift=.2'
 export TMPDIR="$HOME/tmp"
 export XTERM='xfce4-terminal'
@@ -22,9 +24,11 @@ export XTERM='xfce4-terminal'
 alias gvim='gvim -p'
 alias iotop='iotop --only'
 alias less=$PAGER
-alias ls='LC_COLLATE=C ls --almost-all --color=auto --group-directories-first --human-readable --time-style=long-iso'
+alias ls='ls --almost-all --color=always --group-directories-first --human-readable --time-style=long-iso'
 alias mplayer='mplayer -af scaletempo'
 alias ps='ps uxf'
 alias py='ipython3 --no-banner --no-confirm-exit'
+alias sl='sl -e'
+alias tree='tree -aCh'
 alias vim='vim -p'
 alias watch='watch --interval=1'

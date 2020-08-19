@@ -18,6 +18,7 @@ ipython3
 jq
 libtool
 libtool-bin
+linux-perf
 llvm
 lsof
 lz4

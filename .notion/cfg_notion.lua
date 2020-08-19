@@ -37,10 +37,10 @@ defbindings("WScreen", {
     kpress("Print", "notioncore.exec_on(_, 'xfce4-screenshooter')"),
 
     bdoc("Lock the screen.", "lock"),
-    kpress("Shift+Escape", "notioncore.exec_on(_, 'xflock4')"),
+    kpress("Control+Escape", "notioncore.exec_on(_, 'xflock4')"),
 
     bdoc("Suspend the computer (to RAM).", "sleep"),
-    kpress("Control+Escape", "notioncore.exec_on(_, 'systemctl suspend')"),
+    kpress("Mod1+Escape", "notioncore.exec_on(_, 'systemctl suspend')"),
 })
 
 -- Allow some Xfce4 panel popup windows (such as datetime, whisker menu) to
