@@ -1,0 +1,3 @@
+Package: signal-desktop
+Pin: origin updates.signal.org
+Pin-Priority: 110

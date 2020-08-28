@@ -1,0 +1,29 @@
+Package: *
+Pin: origin *.debian.org
+Pin: release n=buster-backports
+Pin-Priority: 570
+
+Package: *
+Pin: origin *.debian.org
+Pin: release n=buster-updates
+Pin-Priority: 560
+
+Package: *
+Pin: origin *.debian.org
+Pin: release n=buster
+Pin-Priority: 550
+
+Package: *
+Pin: origin *.debian.org
+Pin: release n=bullseye
+Pin-Priority: 160
+
+Package: *
+Pin: origin *.debian.org
+Pin: release a=unstable
+Pin-Priority: 150
+
+Package: zsh-autosuggestions
+Pin: origin *.debian.org
+Pin: release n=bullseye
+Pin-Priority: 600
