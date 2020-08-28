@@ -3,7 +3,7 @@
 # shells. It should be compatible with various shells (dash, bash, zsh). You may
 # want to point ~/.zshenv, ~/.bash_profile, and ~/.xsession at this.
 
-# Add ~/bin and /sbin to $PATH. These guards are here to avoid adding redundant
+# Add directories to $PATH. These guards are here to avoid adding redundant
 # paths, even if this file is sourced multiple times.
 case ":$PATH:" in
   *":$HOME/bin:"*) ;;
@@ -13,6 +13,10 @@ case ":$PATH:" in
   *":/sbin:"*) ;;
   *) export PATH="$PATH:/sbin" ;;
 esac
+case ":$PATH:" in
+  *":$HOME/.cargo/bin:"*) ;;
+  *) export PATH="$PATH:$HOME/.cargo/bin" ;;
+esac
 
 export BROWSER="$HOME/bin/firefox"
 export LESSSECURE='1'
@@ -21,6 +25,7 @@ export PAGER='less --chop-long-lines --jump-target=5 --no-init --RAW-CONTROL-CHA
 export TMPDIR="$HOME/tmp"
 export XTERM='xfce4-terminal'
 
+alias df='df -h'
 alias gvim='gvim -p'
 alias iotop='iotop --only'
 alias less=$PAGER

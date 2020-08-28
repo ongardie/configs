@@ -1,8 +1,9 @@
 # History
+setopt EXTENDED_HISTORY
 setopt HIST_IGNORE_SPACE
 setopt INC_APPEND_HISTORY
-HISTSIZE=10000
-SAVEHIST=10000
+HISTSIZE=100000
+SAVEHIST=100000
 HISTFILE=~/.zsh_history
 
 # Completion
@@ -46,6 +47,8 @@ zle-keymap-select () {
 zle -N zle-keymap-select
 # Re-enable Ctrl-R searching through history
 bindkey '^R' history-incremental-search-backward
+# For multi-line pasted input, allow backspace to delete line break.
+bindkey -M viins '^?' backward-delete-char
 
 # Set up prompt
 parse_git_branch() {
@@ -97,3 +100,16 @@ prompt_command() {
 }
 setopt PROMPT_SUBST
 PROMPT='$(prompt_command)'
+
+
+# Enable autosuggestions. On Debian, this is provided by the
+# zsh-autosuggestions package. The completion strategy was added in v0.6.0.
+ZSH_AUTOSUGGEST_USE_ASYNC=1
+. /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+if command -v _zsh_autosuggest_strategy_completion >/dev/null; then
+  ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+fi
+
+# Enable syntax higlighting. On Debian, this is provided by the
+# zsh-syntax-highlighting package. This needs to come at the end of the file.
+. /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
