@@ -26,7 +26,13 @@ export TMPDIR="$HOME/tmp"
 export XTERM='xfce4-terminal'
 
 alias df='df -h'
+alias diff='diff --new-file --recursive --unified'
 alias gvim='gvim -p'
+if [ -n "$BASH_VERSION" ]; then
+  alias run-help='help'
+elif [ -n "$ZSH_VERSION" ]; then
+  alias help='run-help'
+fi
 alias iotop='iotop --only'
 alias less=$PAGER
 alias ls='ls --almost-all --color=always --group-directories-first --human-readable --time-style=long-iso'

@@ -42,6 +42,12 @@ if has("gui_running")
   " Increase font size
   set guifont=Bitstream\ Vera\ Sans\ Mono\ 12
 
+  " Resize main editor area when adding a tab bar, etc. This works better with
+  " tiling window managers. Without this on Notion 4, if I open a new window,
+  " open a second tab, and try to type a command with :, I can't see where I'm
+  " typing.
+  set guioptions+=k
+
   " Hide menu and toolbar
   set guioptions-=m
   set guioptions-=T

@@ -5,7 +5,8 @@
     "cSpell.diagnosticLevel": "Hint",
     "cSpell.allowCompoundWords": true,
     "cSpell.userWords": [
-        "ongardie"
+        "ongardie",
+        "ongaro"
     ],
     "diffEditor.ignoreTrimWhitespace": false,
     "editor.formatOnSave": true,
