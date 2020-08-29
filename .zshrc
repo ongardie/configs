@@ -1,3 +1,6 @@
+# Lazily load functions from ~/.zfunc.
+fpath=(~/.zfunc $fpath)
+
 # History
 setopt EXTENDED_HISTORY
 setopt HIST_IGNORE_SPACE
