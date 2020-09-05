@@ -41,6 +41,12 @@ if [[ -x /usr/lib/command-not-found ]] ; then
   }
 fi
 
+# Allow comments with '#' on the console. Otherwise these command get run and
+# end up showing silly things like:
+#     Command '#echo' not found, did you mean:
+setopt INTERACTIVE_COMMENTS
+
+
 # Vim mode
 set -o vi
 # This causes prompt_command() to be invoked whenever $KEYMAP changes.

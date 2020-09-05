@@ -9,7 +9,10 @@
         "ongaro"
     ],
     "diffEditor.ignoreTrimWhitespace": false,
-    "editor.formatOnSave": true,
+    // This is really nice on projects that do it, but really awful when you
+    // accidentally run it on projects that shouldn't be re-formatted. So set
+    // this to true for specific projects only.
+    "editor.formatOnSave": false,
     "editor.minimap.enabled": false,
     "editor.renderWhitespace": "boundary",
     "editor.rulers": [

@@ -2,10 +2,11 @@
 # installed with
 # `git config --global core.excludesfile ~/configs/dot-gitignore`.
 
-.nobck
 *.pyc
-.*.swp
+.*.sw?
 .Rhistory
+.nobck
+.sw?
 .vscode/
 .~lock.*\#
 __pycache__/

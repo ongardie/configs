@@ -10,8 +10,8 @@ case ":$PATH:" in
   *) export PATH="$HOME/bin:$PATH" ;;
 esac
 case ":$PATH:" in
-  *":/sbin:"*) ;;
-  *) export PATH="$PATH:/sbin" ;;
+  *":/usr/sbin:"*) ;;
+  *) export PATH="$PATH:/usr/sbin" ;;
 esac
 case ":$PATH:" in
   *":$HOME/.cargo/bin:"*) ;;
@@ -25,21 +25,43 @@ export PAGER='less --chop-long-lines --jump-target=5 --no-init --RAW-CONTROL-CHA
 export TMPDIR="$HOME/tmp"
 export XTERM='xfce4-terminal'
 
+if command -v batcat >/dev/null && ! command -v bat >/dev/null; then
+  alias bat='batcat'
+fi
 alias df='df -h'
 alias diff='diff --new-file --recursive --unified'
+if command -v fdfind >/dev/null && ! command -v fd >/dev/null; then
+  alias fd='fdfind'
+fi
+alias feh='feh --scale-down'
 alias gvim='gvim -p'
-if [ -n "$BASH_VERSION" ]; then
-  alias run-help='help'
-elif [ -n "$ZSH_VERSION" ]; then
+if [ -n "$ZSH_VERSION" ]; then
   alias help='run-help'
+elif [ -n "$BASH_VERSION" ]; then
+  alias run-help='help'
 fi
 alias iotop='iotop --only'
+alias jq='jq --color-output'
 alias less=$PAGER
 alias ls='ls --almost-all --color=always --group-directories-first --human-readable --time-style=long-iso'
 alias mplayer='mplayer -af scaletempo'
+alias open='xdg-open'
 alias ps='ps uxf'
 alias py='ipython3 --no-banner --no-confirm-exit'
 alias sl='sl -e'
 alias tree='tree -aCh'
 alias vim='vim -p'
 alias watch='watch --interval=1'
+
+# The 'free' command uses a lot of extra whitespace by default. This
+# function reformats the output for narrower terminals.
+#
+# Note: One downside of using `column` is that it can't right-align the
+# columns. Anyway, normal `free --human` also screws this up a little when
+# the units aren't the same width.
+free() {
+  {
+    echo -n .
+    command free --human --wide "$@"
+  } | column -t
+}
