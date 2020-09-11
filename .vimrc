@@ -27,6 +27,9 @@ set number
 " Show the cursor position (line and column)
 set ruler
 
+" Keep a few lines of margin above/below the cursor.
+set scrolloff=3
+
 " Create new split windows below/right of existing
 set splitbelow
 set splitright
@@ -34,6 +37,10 @@ set splitright
 " When tab-completing things, list all matches and complete through the common
 " prefix
 set wildmode=list:longest
+
+" Make j and k respect line wrapping.
+nmap j gj
+nmap k gk
 
 if has("gui_running")
   " Set theme

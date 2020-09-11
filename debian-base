@@ -13,7 +13,9 @@ elinks
 git
 glibc-doc
 golang
+hotspot
 iotop
+iperf3
 ipython3
 jq
 libtool

@@ -40,6 +40,7 @@ if [ -n "$ZSH_VERSION" ]; then
 elif [ -n "$BASH_VERSION" ]; then
   alias run-help='help'
 fi
+alias hexdump='hexdump -C'
 alias iotop='iotop --only'
 alias jq='jq --color-output'
 alias less=$PAGER
@@ -52,6 +53,7 @@ alias sl='sl -e'
 alias tree='tree -aCh'
 alias vim='vim -p'
 alias watch='watch --interval=1'
+alias xev='xev -event keyboard -event button'
 
 # The 'free' command uses a lot of extra whitespace by default. This
 # function reformats the output for narrower terminals.
@@ -65,3 +67,9 @@ free() {
     command free --human --wide "$@"
   } | column -t
 }
+
+
+
+#if find -s /dev/null >/dev/null 2>&1; then
+#  alias find='find -s'
+#fi

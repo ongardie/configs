@@ -16,7 +16,7 @@
     "editor.minimap.enabled": false,
     "editor.renderWhitespace": "boundary",
     "editor.rulers": [
-        80
+        79
     ],
     "eslint.run": "onSave",
     "files.insertFinalNewline": true,
@@ -33,16 +33,32 @@
     "vim.handleKeys": {
         "<C-f>": false
     },
+    "vim.normalModeKeyBindings": [
+        // Make j and k respect line wrapping.
+        {
+            "before": ["j"],
+            "after": ["g", "j"]
+        },
+        {
+            "before": ["k"],
+            "after": ["g", "k"]
+        }
+    ],
+    // I want textwidth=79 like normal vim, but it seems to take 82 to get that
+    // behavior (for gq to wrap after 79).
+    "vim.textwidth": 82,
     "window.zoomLevel": 1,
     "workbench.editor.closeOnFileDelete": true,
 
     "go.formatTool": "goimports",
     "html.autoClosingTags": false,
     "javascript.suggest.autoImports": false,
+    "python.dataScience.askForKernelRestart": false,
     "typescript.suggest.autoImports": false,
     "typescript.surveys.enabled": false,
     "[typescript]": {
         "editor.autoClosingBrackets": "never",
         "editor.autoClosingQuotes": "never"
-    }
+    },
+    "clangd.path": "/home/ongardie/.config/VSCodium/User/globalStorage/llvm-vs-code-extensions.vscode-clangd/install/10.0.0/clangd_10.0.0/bin/clangd"
 }
