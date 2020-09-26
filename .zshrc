@@ -110,6 +110,20 @@ prompt_command() {
 setopt PROMPT_SUBST
 PROMPT='$(prompt_command)'
 
+# Show truncated directory listing after cd
+chpwd() {
+  print -P "${PROMPT}%B%F{black}ls%f%b"
+  count=0
+  ls -C -w "$COLUMNS" | while read line; do
+    echo "$line"
+    if [ $count = $(( $LINES / 3 )) ]; then
+      echo "...$(ls | wc -l) files total"
+      break
+    fi
+    (( count = $count + 1 ))
+  done
+}
+
 
 # Enable autosuggestions. On Debian, this is provided by the
 # zsh-autosuggestions package. The completion strategy was added in v0.6.0.
