@@ -28,7 +28,8 @@ export XTERM='xfce4-terminal'
 if command -v batcat >/dev/null && ! command -v bat >/dev/null; then
   alias bat='batcat'
 fi
-alias df='df -h'
+alias cp='cp --interactive'
+alias df='df --human-readable'
 alias diff='diff --new-file --recursive --unified'
 if command -v fdfind >/dev/null && ! command -v fd >/dev/null; then
   alias fd='fdfind'
@@ -46,6 +47,7 @@ alias jq='jq --color-output'
 alias less=$PAGER
 alias ls='ls --almost-all --color=always --group-directories-first --human-readable --time-style=long-iso'
 alias mplayer='mplayer -af scaletempo'
+alias mv='mv --interactive'
 alias open='xdg-open'
 alias ps='ps uxf'
 alias py='ipython3 --no-banner --no-confirm-exit'

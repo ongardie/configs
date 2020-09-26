@@ -9,6 +9,7 @@
         "ongaro"
     ],
     "diffEditor.ignoreTrimWhitespace": false,
+    "editor.autoClosingBrackets": "never",
     // This is really nice on projects that do it, but really awful when you
     // accidentally run it on projects that shouldn't be re-formatted. So set
     // this to true for specific projects only.
@@ -57,6 +58,10 @@
     "typescript.suggest.autoImports": false,
     "typescript.surveys.enabled": false,
     "[typescript]": {
+        "editor.autoClosingBrackets": "never",
+        "editor.autoClosingQuotes": "never"
+    },
+    "[typescriptreact]": {
         "editor.autoClosingBrackets": "never",
         "editor.autoClosingQuotes": "never"
     }
