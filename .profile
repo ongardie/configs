@@ -35,6 +35,7 @@ if command -v fdfind >/dev/null && ! command -v fd >/dev/null; then
   alias fd='fdfind'
 fi
 alias feh='feh --scale-down'
+alias gitk='gitk --all'
 alias gvim='gvim -p'
 if [ -n "$ZSH_VERSION" ]; then
   alias help='run-help'

@@ -6,9 +6,12 @@
     "cSpell.allowCompoundWords": true,
     "cSpell.userWords": [
         "ongardie",
-        "ongaro"
+        "ongaro",
+        "preact",
+        "unmount"
     ],
     "diffEditor.ignoreTrimWhitespace": false,
+    "editor.acceptSuggestionOnCommitCharacter": false,
     "editor.autoClosingBrackets": "never",
     // This is really nice on projects that do it, but really awful when you
     // accidentally run it on projects that shouldn't be re-formatted. So set
