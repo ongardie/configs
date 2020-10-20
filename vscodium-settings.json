@@ -8,7 +8,9 @@
         "ongardie",
         "ongaro",
         "preact",
-        "unmount"
+        "roboto",
+        "unmount",
+        "unmounting"
     ],
     "diffEditor.ignoreTrimWhitespace": false,
     "editor.acceptSuggestionOnCommitCharacter": false,

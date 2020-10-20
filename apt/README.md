@@ -29,7 +29,7 @@ curl -sS https://updates.signal.org/desktop/apt/keys.asc | sudo apt-key add -
 [Spotify](https://www.spotify.com/us/download/linux/):
 
 ```sh
-curl -sS https://download.spotify.com/debian/pubkey.gpg | sudo apt-key add -
+curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | sudo apt-key add -
 ```
 
 [VSCodium](https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo):

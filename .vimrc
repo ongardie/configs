@@ -30,6 +30,9 @@ set ruler
 " Keep a few lines of margin above/below the cursor.
 set scrolloff=3
 
+" Turn on the spelling checker.
+set spell
+
 " Create new split windows below/right of existing
 set splitbelow
 set splitright
