@@ -14,6 +14,10 @@ case ":$PATH:" in
   *) export PATH="$PATH:/usr/sbin" ;;
 esac
 case ":$PATH:" in
+  *":$HOME/configs/bin:"*) ;;
+  *) export PATH="$PATH:$HOME/configs/bin" ;;
+esac
+case ":$PATH:" in
   *":$HOME/.cargo/bin:"*) ;;
   *) export PATH="$PATH:$HOME/.cargo/bin" ;;
 esac

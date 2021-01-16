@@ -31,13 +31,25 @@ zstyle ':completion:*' verbose true
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
-# Look for relevant package names when you run an unknown command. This is
-# based on /etc/zsh_command_not_found but this version prints a message when it
-# finds nothing.
-if [[ -x /usr/lib/command-not-found ]] ; then
-  function command_not_found_handler {
+# Look for relevant package names when you run an unknown command.
+if [[ -x /usr/lib/command-not-found ]]; then
+  # This is based on /etc/zsh_command_not_found but this version prints a
+  # message when it finds nothing. This is fixed upstream in command-not-found
+  # version 20.10.1; see
+  # https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=927876
+  command_not_found_handler() {
     [[ -x /usr/lib/command-not-found ]] || return 1
     /usr/lib/command-not-found -- ${1+"$1"} && :
+  }
+elif command -v apt-binary >/dev/null; then
+  command_not_found_handler() {
+    echo "Command '$1' not found"
+    # Re-check to avoid infinite loop if apt-binary was removed.
+    if command -v apt-binary >/dev/null; then
+      echo "Searching Debian packages..."
+      apt-binary "$1"
+    fi
+    return 127
   }
 fi
 

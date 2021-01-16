@@ -1,0 +1,44 @@
+#!/bin/sh
+
+# This searches for available APT packages that contain an executable with the
+# given name. This is similar to `apt-file search "bin/$1 "`, but this is
+# faster at searching and provides nicer output. This is also similar to
+# `command-not-found`, but this does not require a precomputed index.
+
+set -e
+
+if [ $# -ne 1 ]; then
+    echo "Find APT packages that contain an executable with the given name."
+    echo "Usage: $(basename $0) PROGRAM" >&2
+    exit 1
+fi
+
+PATTERN="^(usr/)?s?bin/$1\s"
+
+FILES=$(ls /var/lib/apt/lists/*Contents* | grep -v '\.diff_Index$')
+
+if command -v rg > /dev/null && command -v lz4 > /dev/null; then
+    LINES=$(rg -z --no-filename "$PATTERN" $FILES)
+else
+    echo "Run 'sudo apt install ripgrep lz4' to speed this up"
+    LINES=$(/usr/lib/apt/apt-helper cat-file $FILES | grep -P "$PATTERN")
+fi
+
+# The lines contain one or multiple packages, like this:
+# usr/bin/parallel                  utils/parallel
+# usr/bin/parallel                  utils/moreutils,utils/parallel
+#
+# This sed expression drops the filename, splits the package list by the comma
+# delimiter, and drops the section names.
+PACKAGES=$(echo "$LINES" | sed 's/^.* +//; s/,/\n/g; s/^.*\///' | sort -u)
+
+if [ -z "$PACKAGES" ]; then
+    echo "No packages found"
+    exit
+fi
+
+# Instead of printing the package names, this prints a brief description and
+# information about versions. You're not supposed to use 'apt' in scripts, but
+# it's hard to get this concise output any other way.
+PACKAGES_DISJUNCTION=$(echo $PACKAGES | sed 's/ /|/g')
+apt search --names-only "^($PACKAGES_DISJUNCTION)$"
