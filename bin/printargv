@@ -1,0 +1,7 @@
+#!/usr/bin/env python3
+
+# This small script is useful for debugging quoting problems in command-line
+# arguments. It simply prints its arguments unambiguously and exits.
+
+import sys
+print(sys.argv)
