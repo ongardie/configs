@@ -50,3 +50,11 @@ defwinprop{
   float=true,
   userpos=true,
 }
+
+-- Allow Inkscape dialog windows to be moved outside the parent window's
+-- region.
+defwinprop{
+  class="Inkscape",
+  is_transient=true,
+  float=true,
+}

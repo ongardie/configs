@@ -22,7 +22,7 @@ case ":$PATH:" in
   *) export PATH="$PATH:$HOME/.cargo/bin" ;;
 esac
 
-export BROWSER="$HOME/bin/firefox"
+export BROWSER='firefox'
 export LESSSECURE='1'
 export LC_COLLATE='C'
 export PAGER='less --chop-long-lines --jump-target=5 --no-init --RAW-CONTROL-CHARS --quit-if-one-screen --shift=.2'
@@ -35,6 +35,7 @@ fi
 alias cp='cp --interactive'
 alias df='df --human-readable'
 alias diff='diff --new-file --recursive --unified'
+alias du='du --human-readable'
 if command -v fdfind >/dev/null && ! command -v fd >/dev/null; then
   alias fd='fdfind'
 fi
