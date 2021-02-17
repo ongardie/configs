@@ -25,7 +25,7 @@ esac
 export BROWSER='firefox'
 export LESSSECURE='1'
 export LC_COLLATE='C'
-export PAGER='less --chop-long-lines --jump-target=5 --no-init --RAW-CONTROL-CHARS --quit-if-one-screen --shift=.2'
+export PAGER='less --chop-long-lines --jump-target=5 --ignore-case --no-init --RAW-CONTROL-CHARS --quit-if-one-screen --shift=.2'
 export TMPDIR="$HOME/tmp"
 export XTERM='xfce4-terminal'
 

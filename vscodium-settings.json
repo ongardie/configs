@@ -39,6 +39,8 @@
     "vim.handleKeys": {
         "<C-f>": false
     },
+    "vim.hlsearch": true,
+    "vim.ignorecase": false,
     "vim.normalModeKeyBindings": [
         // Make j and k respect line wrapping.
         {
