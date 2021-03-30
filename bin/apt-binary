@@ -13,10 +13,13 @@ if [ $# -ne 1 ]; then
     exit 1
 fi
 
+FILES=$(find /var/lib/apt/lists/ -maxdepth 1 -name '*Contents*' -not -name '*.diff_Index')
+if [ -z "$FILES" ]; then
+    echo "Run 'sudo apt install apt-file && sudo apt update' to search package contents."
+    exit 1
+fi
+
 PATTERN="^(usr/)?s?bin/$1\s"
-
-FILES=$(ls /var/lib/apt/lists/*Contents* | grep -v '\.diff_Index$')
-
 if command -v rg > /dev/null && command -v lz4 > /dev/null; then
     LINES=$(rg -z --no-filename "$PATTERN" $FILES)
 else
