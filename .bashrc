@@ -1,3 +1,8 @@
+# Disable tty flow control ctrl-S/ctrl-Q
+stty -ixon || true
+bind '"\C-s": self-insert'
+bind '"\C-q": self-insert'
+
 # This is a fall-back to look for relevant package names when you
 # run an unknown command. It's used only when the command-not-found
 # package isn't installed but my apt-binary script is available.

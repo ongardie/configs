@@ -1,3 +1,6 @@
+# Disable tty flow control ctrl-S/ctrl-Q
+stty -ixon || true
+
 # Lazily load functions from ~/.zfunc.
 fpath=(~/.zfunc $fpath)
 
