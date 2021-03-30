@@ -41,6 +41,7 @@ if command -v fdfind >/dev/null && ! command -v fd >/dev/null; then
 fi
 alias feh='feh --scale-down'
 alias gitk='gitk --all'
+alias gpg='gpg --no-symkey-cache'
 alias gvim='gvim -p'
 if [ -n "$ZSH_VERSION" ]; then
   alias help='run-help'
@@ -58,6 +59,7 @@ alias open='xdg-open'
 alias ps='ps uxf'
 alias py='ipython3 --no-banner --no-confirm-exit'
 alias sl='sl -e'
+alias timestamp='date --utc "+%Y-%m-%dT%H:%M:%SZ"'
 alias tree='tree -aCh'
 alias vim='vim -p'
 alias watch='watch --interval=1'
