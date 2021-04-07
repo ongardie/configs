@@ -72,6 +72,7 @@
     "vim.textwidth": 82,
     "window.zoomLevel": 1,
     "workbench.editor.closeOnFileDelete": true,
+    "workbench.editor.decorations.badges": false,
 
     "go.formatTool": "goimports",
     "html.autoClosingTags": false,

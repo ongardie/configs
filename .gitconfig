@@ -1,4 +1,7 @@
 [alias]
+	amend = commit --amend --reset-author
+	fa = fetch --all
+	ff = merge --ff-only
 	lola = log --graph --oneline --decorate --all
 [color]
 	diff = auto
