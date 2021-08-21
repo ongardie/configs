@@ -55,7 +55,9 @@ alias less=$PAGER
 alias ls='ls --almost-all --color=always --group-directories-first --human-readable --time-style=long-iso'
 alias mplayer='mplayer -af scaletempo'
 alias mv='mv --interactive'
-alias open='xdg-open'
+if command -v xdg-open >/dev/null && ! command -v open >/dev/null; then
+  alias open='xdg-open'
+fi
 alias ps='ps uxf'
 alias py='ipython3 --no-banner --no-confirm-exit'
 alias sl='sl -e'
