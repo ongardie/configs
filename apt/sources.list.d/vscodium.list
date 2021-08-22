@@ -1,1 +1,1 @@
-deb https://paulcarroty.gitlab.io/vscodium-deb-rpm-repo/debs/ vscodium main
+deb [signed-by=/usr/share/keyrings/vscodium.gpg] https://paulcarroty.gitlab.io/vscodium-deb-rpm-repo/debs/ vscodium main

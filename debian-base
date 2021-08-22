@@ -49,6 +49,7 @@ tree
 ufw
 unattended-upgrades
 unzip
+usrmerge
 vim
 wget
 wireguard-tools

@@ -1,1 +1,1 @@
-deb http://repository.spotify.com stable non-free
+deb [signed-by=/usr/share/keyrings/spotify.gpg] http://repository.spotify.com stable non-free

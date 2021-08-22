@@ -1,21 +1,21 @@
 Package: *
 Pin: origin *.debian.org
-Pin: release n=buster-backports
-Pin-Priority: 570
+Pin: release n=bullseye-security
+Pin-Priority: 900
 
 Package: *
 Pin: origin *.debian.org
-Pin: release n=buster-updates
+Pin: release n=bullseye-updates
 Pin-Priority: 560
 
 Package: *
 Pin: origin *.debian.org
-Pin: release n=buster
+Pin: release n=bullseye
 Pin-Priority: 550
 
 Package: *
 Pin: origin *.debian.org
-Pin: release n=bullseye
+Pin: release n=bookworm
 Pin-Priority: 160
 
 Package: *
@@ -23,7 +23,12 @@ Pin: origin *.debian.org
 Pin: release a=unstable
 Pin-Priority: 150
 
-Package: zsh-autosuggestions
+Package: nothing-here-yet
 Pin: origin *.debian.org
-Pin: release n=bullseye
+Pin: release n=bookworm
 Pin-Priority: 600
+
+Package: nothing-here-yet
+Pin: origin *.debian.org
+Pin: release n=bullseye-backports
+Pin-Priority: 570

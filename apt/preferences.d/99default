@@ -1,7 +1,3 @@
-Package: libpython2* python2*
-Pin: origin *
-Pin-Priority: -1
-
 Package: *
 Pin: origin *
 Pin-Priority: -1
