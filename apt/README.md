@@ -36,7 +36,7 @@ curl -sS https://updates.signal.org/desktop/apt/keys.asc | sudo gpg --dearmor --
 [Spotify](https://www.spotify.com/us/download/linux/):
 
 ```sh
-curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | sudo gpg --dearmor --output /usr/share/keyrings/spotify.gpg
+curl -sS https://download.spotify.com/debian/pubkey_5E3C45D7B312C643.gpg | sudo gpg --dearmor --output /usr/share/keyrings/spotify.gpg
 ```
 
 [VSCodium](https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo):
