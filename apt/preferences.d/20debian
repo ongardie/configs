@@ -28,7 +28,7 @@ Pin: origin *.debian.org
 Pin: release n=bookworm
 Pin-Priority: 600
 
-Package: inkscape
+Package: golang-* inkscape
 Pin: origin *.debian.org
 Pin: release n=bullseye-backports
 Pin-Priority: 570
