@@ -7,28 +7,76 @@
 # binary.
 
 # In other words, this is a slightly more magical and more opinionated version
-# of the Node Version Manager at https://github.com/nvm-sh/nvm. Note that this
-# script only understands `.nvmrc` files with version numbers (not "lts/*" and
-# such).
+# of the Node Version Manager at https://github.com/nvm-sh/nvm.
 
 set -e
 
 start=$(pwd)
 
-while [ ! -f .nvmrc ];  do
+while true; do
+  if [ -f .nvmrc ]; then
+    VERSION=$(cat .nvmrc)
+    break
+  fi
   if [ $(pwd) = '/' ]; then
-    echo "You must create an .nvmrc file"
-    exit 1
+    # No .nvmrc file anywhere.
+    VERSION='lts/*'
+    break
   fi
   cd ..
 done
 
-VERSION=$(cat .nvmrc)
+find_version() {
+  VERSION_FILE=${XDG_CACHE_HOME:-"$HOME/.cache"}/node-versions.json
+  if [ ! -f "$VERSION_FILE" ] || expr $(date +%s) - $(date +%s -r "$VERSION_FILE") '>' 60 '*' 60 '*' 24 > /dev/null; then
+    echo "Updating $VERSION_FILE"
+    curl -L --max-time 2 --no-progress-meter https://nodejs.org/download/release/index.json -o "$VERSION_FILE" || [ -f "$VERSION_FILE" ]
+  fi
 
-DIR="$HOME/opt/node-v$VERSION-linux-x64/bin"
+  # Note: the jq patterns assume the version numbers are sorted in the JSON
+  # file in descending order. This is a bit fragile, but jq doesn't do a
+  # version sort and neither does `sort` on OS X.
+  V=$(jq -r "$1" "$VERSION_FILE")
+  if [ "$V" = "null" ]; then
+    echo "Nonexistent node version in $(pwd)/.nvmrc: $VERSION"
+    exit 1
+  fi
+  VERSION=$V
+}
+
+case $VERSION in
+  node)
+    find_version '.[0].version'
+    ;;
+  'lts/*' )
+    find_version 'map(select(.lts)) | .[0].version'
+    ;;
+
+  # For technical reasons, these patterns only test that the first digit per
+  # group is numeric. That's probably good enough.
+  v[0-9]*.[0-9]*.[0-9]*)
+    ;;
+  [0-9]*.[0-9]*.[0-9]*)
+    VERSION="v$VERSION"
+    ;;
+  v[0-9]* | v[0-9]*.[0-9]*)
+    find_version "map(select(.version | startswith(\"$VERSION.\"))) | .[0].version"
+    ;;
+  [0-9]* | [0-9]*.[0-9]*)
+    find_version "map(select(.version | startswith(\"v$VERSION.\"))) | .[0].version"
+    ;;
+
+  *)
+    echo "Unsupported node version in $(pwd)/.nvmrc: $VERSION"
+    exit 1
+    ;;
+esac
+
+
+DIR="$HOME/opt/node-$VERSION-linux-x64/bin"
 
 if [ ! -d "$DIR" ]; then
-  echo "Installing node v$VERSION $DIR"
+  echo "Installing node $VERSION $DIR"
   install-node "$VERSION"
 fi
 
