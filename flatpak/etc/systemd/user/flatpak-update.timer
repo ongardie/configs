@@ -1,0 +1,15 @@
+# Copied from https://wiki.archlinux.org/title/Flatpak#Automatic_updates_via_systemd
+
+[Unit]
+Description=Update Flatpak
+
+[Timer]
+OnBootSec=2m
+OnActiveSec=2m
+OnUnitInactiveSec=24h
+OnUnitActiveSec=24h
+AccuracySec=1h
+RandomizedDelaySec=10m
+
+[Install]
+WantedBy=timers.target

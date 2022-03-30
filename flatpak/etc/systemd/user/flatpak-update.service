@@ -1,0 +1,13 @@
+# Copied from https://wiki.archlinux.org/title/Flatpak#Automatic_updates_via_systemd
+
+[Unit]
+Description=Update Flatpak
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/flatpak update --noninteractive --assumeyes
+
+[Install]
+WantedBy=multi-user.target
