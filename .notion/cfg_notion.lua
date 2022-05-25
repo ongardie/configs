@@ -33,6 +33,9 @@ defbindings("WScreen", {
     bdoc("Open web browser private window."),
     kpress(META.."Shift+W", "notioncore.exec_on(_, 'sensible-browser --private-window')"),
 
+    bdoc("Open python.", "python"),
+    kpress(META.."P", "notioncore.exec_on(_, (XTERM or 'x-terminal-emulator') .. ' -e ipython3')"),
+
     bdoc("Take a screenshot.", "shot"),
     kpress("Print", "notioncore.exec_on(_, 'xfce4-screenshooter')"),
 
