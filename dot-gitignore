@@ -6,6 +6,7 @@
 *.pyc
 .*.sw?
 .Rhistory
+.mypy_cache/
 .nobck
 .sw?
 .vscode/

@@ -13,3 +13,6 @@ rustup completions zsh > $ZSH_COMP/_rustup
 
 rustup completions bash cargo > $BASH_COMP/cargo
 rustup completions zsh cargo > $ZSH_COMP/_cargo
+
+restic generate --bash-completion $BASH_COMP/_restic > /dev/null
+restic generate --zsh-completion $ZSH_COMP/_restic > /dev/null

@@ -95,9 +95,14 @@ prompt_command() {
   fi
 
   # Username and host
-  if [ -n "$SSH_CLIENT" ] || [ -n "$SUDO_USER" ]; then
-    visible=$visible'%F{yellow}%n@%m%f:'
-    title=$title'%n@%m:'
+  if [ -n "$SSH_CLIENT" ] || [ -n "$SUDO_USER" ] || [ -n "$SANDBOX" ]; then
+    if [ "$USER" = "ongardie" ]; then
+      visible=$visible'%F{yellow}%n@%m%f:'
+      title=$title'%n@%m:'
+    else
+      visible=$visible'%F{yellow}%m%f:'
+      title=$title'%m:'
+    fi
   fi
 
   # Working directory

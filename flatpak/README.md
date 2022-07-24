@@ -9,6 +9,8 @@ sudo apt install flatpak
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 ```
 
+You may need to log out and back in or reboot.
+
 ### Flatpak Updates
 
 > Warning: It is generally not a good idea to run unattended updates via
