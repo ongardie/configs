@@ -1,0 +1,29 @@
+#!/bin/sh
+
+# This is intended to be used with the Notion window manager and Xfce's Generic
+# Monitor panel plugin.
+
+output=$(notionflux <<EOF
+  screen = notioncore.find_screen_id(0)
+  groupws = screen:mx_current()
+  current = screen:get_index(groupws) + 1
+  count = screen:mx_count()
+
+  output = ''
+  for i = 1, count do
+    if i == current then
+      output = output..'['..i..'] '
+    else
+      output = output..i..' '
+    end
+  end
+
+  return output
+EOF
+)
+
+# strip extra quotes and space
+output=$(eval "echo $output")
+
+echo 'notion workspace'
+echo $output
