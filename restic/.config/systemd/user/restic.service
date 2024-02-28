@@ -1,0 +1,16 @@
+# This is normally started by restic.timer.
+
+[Unit]
+Description=Restic backups
+
+[Service]
+Type=exec
+ExecStart=/home/ongardie/bin/restic-backup.sh
+Restart=on-failure
+RestartSec=20m
+Nice=19
+IOSchedulingClass=idle
+Environment="DISPLAY=:0"
+
+[Install]
+WantedBy=default.target

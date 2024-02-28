@@ -1,0 +1,14 @@
+// This contains keybindings for the VS Code or VSCodium editor. It's allowed
+// to have comments (open it as "JSON with Comments"). It goes in
+// `~/.config/VSCodium/User/keybindings.json` or similar on Linux.
+[
+  {
+    // - `showAllSymbols` is normally set to `ctrl+t`, but vim uses that.
+    // - `ctrl+o` normally opens a file, which I rarely use; I usually open an
+    //    entire workspace at a time.
+    // - `ctrl+shift+o` is `workbench.action.gotoSymbol`, which searches just
+    //   the current file, so it makes sense to group these together.
+    "key": "ctrl+o",
+    "command": "workbench.action.showAllSymbols"
+  }
+]

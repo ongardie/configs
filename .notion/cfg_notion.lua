@@ -40,16 +40,27 @@ defbindings("WScreen", {
     kpress("Print", "notioncore.exec_on(_, 'xfce4-screenshooter')"),
 
     bdoc("Lock the screen.", "lock"),
-    kpress("Control+Escape", "notioncore.exec_on(_, 'xflock4')"),
+    kpress("Control+Escape", "notioncore.exec_on(_, 'xdg-screensaver lock')"),
 
     bdoc("Suspend the computer (to RAM).", "sleep"),
     kpress("Mod1+Escape", "notioncore.exec_on(_, 'systemctl suspend')"),
 })
 
+-- Additional kludges
+
 -- Allow some Xfce4 panel popup windows (such as datetime, whisker menu) to
--- float
+-- float.
 defwinprop{
   class="Wrapper-2.0",
+  float=true,
+  userpos=true,
+}
+
+-- Other panel popup windows (like the clock's calendar) still don't seem to
+-- float in the correct place.
+defwinprop {
+  class="Xfce4-panel",
+  name="",
   float=true,
   userpos=true,
 }
@@ -59,5 +70,23 @@ defwinprop{
 defwinprop{
   class="Inkscape",
   is_transient=true,
+  float=true,
+}
+
+-- Allow some KDE windows to float. See
+-- https://userbase.kde.org/Tutorials/Using_Other_Window_Managers_with_Plasma
+defwinprop{
+  class="Plasma",
+  float=true,
+}
+
+defwinprop{
+  class="plasmashell",
+  float=true,
+}
+
+-- Zoom (video calls). Generates lots of popups.
+defwinprop{
+  class="zoom",
   float=true,
 }

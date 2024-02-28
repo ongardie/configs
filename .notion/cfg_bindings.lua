@@ -48,7 +48,7 @@ defbindings("WScreen", {
     bdoc("Go to next screen on multihead setup.", "->scr"),
     kpress(META.."E", "ioncore.goto_next_screen()"),
 
-    bdoc("Create a new workspace of chosen default type."),
+    bdoc("Create a new workspace of chosen default type.", "+ws"),
     kpress(META.."F9", "ioncore.create_ws(_)"),
 
     bdoc("Backward-circulate focus.", "<-frame"),

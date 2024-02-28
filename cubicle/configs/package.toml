@@ -1,0 +1,3 @@
+[depends]
+configs-interactive = {}
+zsh = {}

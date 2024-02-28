@@ -1,0 +1,8 @@
+{
+  "editor.formatOnSave": true,
+  "files.associations": {
+    "debian-base": "properties",
+    "debian-desktop": "properties",
+    "fonts.conf": "xml",
+  },
+}

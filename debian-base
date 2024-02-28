@@ -1,58 +1,70 @@
-apt-file
-bash-completion
-build-essential
-cowsay
-cowsay-off
-cryptsetup
-curl
-docker-compose
-docker.io
-eatmydata
-efibootmgr
-elinks
-git
-glibc-doc
-golang
-iotop
-iperf3
-ipython3
-jq
-libtool
-libtool-bin
-linux-perf
-llvm
-lsof
-lz4
-manpages-posix-dev
-nano
-net-tools
-nethogs
-nmap
-openssh-server
-parted
-pv
-python3
-python3-pip
-python3-venv
-python3-wheel
-ripgrep
-rsync
-s-tui
-sl
-sqlite3
-strace
-tcpdump
-time
-tree
-ufw
-unattended-upgrades
-unzip
-usrmerge
-vim
-wget
-wireguard-tools
-xxd
-zip
-zsh
-zsh-autosuggestions
-zsh-syntax-highlighting
+# These are useful Debian Bookworm packages for both servers and workstations.
+# You can install these packages with:
+# sudo apt install $(sed 's/#.*//' debian-base)
+
+apt-file        # search for packages providing files
+aspell          # spell checker
+aspell-en       # spell checker (English dictionary)
+bash-completion # better tab completion for Bash
+bsdextrautils   # `column`, `hexdump`, `look`, etc
+build-essential # C/C++ compiler, tools
+cryptsetup      # LUKS/dm-crypt disk encryption
+curl            # command-line HTTP client (and other protocols)
+docker.io       # run Linux containers
+dosfstools      # to create FAT32 partitions
+eatmydata       # ignore fsync
+efibootmgr      # manage UEFI settings
+elinks          # command-line web browser
+git             # version control system
+glibc-doc       # pthreads man pages
+htop            # [monitoring] process, CPU, and memory usage
+iotop           # [monitoring] disk read/write throughput by process
+iperf3          # measure network throughput
+ipython3        # interactive Python shell
+iw              # configure wireless devices
+jq              # manipulate JSON files
+libtool         # used in building C/C++ libraries
+libtool-bin     # used in building C/C++ libraries
+linux-perf      # CPU profiling tool
+llvm            # compiler, linker, interpreter
+lshw            # show information about hardware
+lsof            # [monitoring] show open files by processes
+lz4             # fast compression tool
+manpages-posix-dev  # POSIX standard man pages
+nano            # basic command-line text editor
+ncal            # displays a calendar on the command-line (`cal`)
+net-tools       # [monitoring] check open network ports, etc (`netstat`)
+nethogs         # [monitoring] network throughput by process
+nmap            # port scanner
+nvme-cli        # manage NVMe disks (PCIe SSDs)
+openssh-server  # SSH server
+parted          # command-line disk partitioning tool
+pciutils        # display information about PCIe devices (`lspci`)
+pv              # add progress bars to pipelines
+pwgen           # command-line tool to generate random passwords
+python3         # scripting language
+python3-pip     # Python package manager
+python3-venv    # Python virtual environment manager
+python3-wheel   # Python support for wheel-formatted packages
+ripgrep         # faster, modern grep
+rlwrap          # add readline support to unmodified programs
+rsync           # remote file copying tool
+s-tui           # [monitoring] CPU usage, temperature, etc
+sqlite3         # CLI tool to manage file-based SQL databases
+strace          # interpose on system calls
+tcpdump         # sniff network packets
+time            # measure command CPU time
+tree            # list a directory tree recursively
+ufw             # easy-to-configure firewall
+unattended-upgrades # automatic and periodic apt upgrade
+unzip           # de-compress .zip archives
+vim             # text editor
+wamerican       # American English dictionary for /usr/share/dict
+wget            # command-line HTTP client
+wireguard-tools # UDP-based VPN with little configuration
+xxd             # hex dump (see also `hexdump` in bsdextrautils)
+zip             # create .zip archives
+zsh             # feature-rich shell
+zsh-autosuggestions     # suggested completions for Zsh prompt
+zsh-syntax-highlighting # syntax highlighting for Zsh prompt
+zstd            # fast and/or strong compression tool

@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# On Debian, this is sourced a helper to `/etc/X11/Xsession`. A default lightdm
+# installation runs that.
+
+export DOT_XSESSIONRC_SOURCED=1
+
+if [ -f ~/.profile ]; then
+    # shellcheck source=/dev/null
+    . ~/.profile
+fi

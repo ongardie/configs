@@ -1,45 +1,65 @@
-baobab
-blueman
-cheese
-chromium
-cups
-diffpdf
-evince
-firefox-esr
-flatpak
-fluxbox
-galternatives
-gimp
-gnome-icon-theme
-gnumeric
-gparted
-graphviz
-hotspot
-inkscape
-kazam
-kdenlive
-libreoffice
-lightdm-gtk-greeter-settings
-mousepad
-mplayer
-notion
-oathtool
-plantuml
-pwgen
-qemu-system-x86
-remmina
-ristretto
-rxvt-unicode
-sshfs
-synaptic
-task-xfce-desktop
-thunar
-vim-gtk
-virt-manager
-vlc
-xclip
-xscreensaver
-xserver-xephyr
-xss-lock
-xterm
-youtube-dl
+# These are useful Debian Bookworm packages for graphical workstations. You can
+# install these packages with:
+# sudo apt install $(sed 's/#.*//' debian-desktop)
+
+at-spi2-core    # to quiet down D-Bus warnings (like when launching gvim)
+baobab          # graphical disk usage analyzer
+blueman         # graphical Bluetooth manager
+cheese          # graphical tool to take pictures with or test webcam
+chromium        # open-source web browser
+cups            # printing daemon
+diffpdf         # visually compare two PDF files
+evince          # PDF viewer
+feh             # very basic image viewer
+firefox-esr     # open-source web browser (older extended support release)
+flatpak         # manage sandboxed desktop applications
+fluxbox         # basic floating window manager
+font-manager    # graphical tool to view fonts
+fonts-recommended   # depends on a bunch of fonts
+fonts-roboto    # a Google font
+galternatives   # graphical tool to manage Debian alternatives system
+gimp            # raster image editor
+gnome-icon-theme    # icons for GNOME
+gnumeric        # spreadsheet program
+gparted         # graphical disk partitioning tool
+graphviz        # tool to generate graph (node and edge) diagrams from text
+inkscape        # vector image editor
+kazam           # tool to record screencasts
+kdenlive        # video editor
+libnotify-bin   # CLI tool to show desktop notifications (`notify-send`)
+libreoffice     # office suite (document editor, spreadsheet program, etc)
+lightdm         # graphical display manager
+lightdm-gtk-greeter-settings    # graphical tool to edit lightdm settings
+mesa-utils      # graphics info: glxinfo, glxgears
+mousepad        # simple graphical text editor
+mplayer         # video player
+network-manager-gnome   # manage network devices and WiFi networks
+notion          # tiling window manager
+oathtool        # command-line tool to generate 2FA/MFA codes
+ovmf            # UEFI for KVM/QEMU virtual machines
+pipewire-audio  # sound daemon and adapters
+qemu-system-gui # GUI to run virtual machines
+qemu-system-x86 # support for x86/x86-64 virtual machines
+qemu-utils      # contains `qemu-img` tools to manipulate VM disk images
+qpdfview        # tabbed PDF viewer (
+remmina         # VNC and rdesktop client
+remmina-plugin-rdp  # rdesktop support for remmina
+remmina-plugin-vnc  # VNC support for remmina
+ristretto       # image viewer
+rxvt-unicode    # basic graphical terminal emulator
+synaptic        # graphical front-end for APT
+task-xfce-desktop   # the Xfce desktop environment (lots of dependencies)
+thunar          # graphical file manager
+tumbler-plugins-extra   # thumbnails in thunar
+vim-gtk3        # graphical front-end for vim (`gvim`)
+virt-manager    # graphical tool to manage virtual machines
+vlc             # video player
+xclip           # command-line interface to X clipboard
+xdg-desktop-portal-gtk  # important component for flatpak
+xfce4-goodies   # optional components for the Xfce desktop environment
+xfce4-notifyd   # daemon for desktop notifications
+xscreensaver    # screen saver/lock screen
+xserver-xephyr  # nested X server
+xss-lock        # configures screen to lock on events like closing laptop lid
+xterm           # basic graphical terminal emulator
+yt-dlp          # download videos from YouTube and other sites

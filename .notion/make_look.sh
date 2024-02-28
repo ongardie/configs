@@ -18,6 +18,7 @@ else
   exit 1
 fi
 
-echo "-- This file was generated from $INPUT using:"
-echo "-- $0 $@"
-sed 's/^\( *font = .*\)size=[0-9]\+/\1size='$SIZE'/' <$INPUT
+that=This
+echo "-- $that file was generated from $INPUT using:"
+echo "-- $(realpath -s "$0")" "$@"
+sed -E "s/^( *font = .*)size=[0-9]+/\1size=$SIZE/" < "$INPUT"

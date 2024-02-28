@@ -1,0 +1,15 @@
+.config/VSCodium/User/keybindings.json
+.config/VSCodium/User/settings.json
+.config/git/config
+.config/git/ignore
+.config/profile.d/20-configs-vars.sh
+.config/shrc.d/11-configs-aliases.sh
+.config/shrc.d/50-free.sh
+.config/zshrc.d/80-cd-ls.zsh
+.config/zshrc.d/80-vi.zsh
+.gdbinit
+.ipython/profile_default/ipython_config.py
+.npmrc
+.sqliterc
+.vimrc
+bin/printargv

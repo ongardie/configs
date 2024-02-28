@@ -1,4 +1,0 @@
-Package: codium
-Pin: origin paulcarroty.gitlab.io
-Pin: release n=vscodium
-Pin-Priority: 110

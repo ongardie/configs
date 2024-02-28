@@ -1,11 +1,11 @@
 The files in this directory are meant to be installed in `/etc/apt/` on a
-Debian 11 (Bullseye) system. See also the `debian-base` and `debian-desktop`
-package lists in the root of this repository.
+Debian 12 (Bookworm) system. See also the `debian-base` and `debian-desktop`
+package lists in the root of this repository, which contain lists of useful
+packages.
 
 ## Sources
 
-The file `sources.list` and the directory `sources.list.d` contain lists of
-package repositories.
+The directory `sources.list.d` contains lists of package repositories.
 
 ## Preferences
 
@@ -33,14 +33,19 @@ curl -sS https://downloads.1password.com/linux/keys/1password.asc | sudo gpg --d
 curl -sS https://updates.signal.org/desktop/apt/keys.asc | sudo gpg --dearmor --output /usr/share/keyrings/signal.gpg
 ```
 
-[Spotify](https://www.spotify.com/us/download/linux/):
+## Disable `recommends`
+
+Debian packages can recommended others, and these get installed by default.
+Some of these are useful, but sometimes they add quite a bit of bloat. You can
+disable this if you're ok with occasional breakage; try to review what you're
+missing as you install new packages.
 
 ```sh
-curl -sS https://download.spotify.com/debian/pubkey_5E3C45D7B312C643.gpg | sudo gpg --dearmor --output /usr/share/keyrings/spotify.gpg
+echo 'Apt::Install-Recommends "0";' | sudo tee > /etc/apt/apt.conf.d/90recommends
 ```
 
-[VSCodium](https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo):
+## Set up automatic updates
 
 ```sh
-curl -sS https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg | sudo gpg --dearmor --output /usr/share/keyrings/vscodium.gpg
+sudo apt install unattended-upgrades
 ```

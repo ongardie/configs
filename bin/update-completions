@@ -3,6 +3,8 @@
 # This script installs tab completion scripts for Bash and Zsh shells. You
 # should re-run it occasionally. It's probably OK if some of this fails.
 
+set -x
+
 BASH_COMP=~/.local/share/bash-completion/completions
 ZSH_COMP=~/.zfunc
 
@@ -16,3 +18,6 @@ rustup completions zsh cargo > $ZSH_COMP/_cargo
 
 restic generate --bash-completion $BASH_COMP/_restic > /dev/null
 restic generate --zsh-completion $ZSH_COMP/_restic > /dev/null
+
+cub completions bash > $BASH_COMP/cub
+cub completions zsh > $ZSH_COMP/_cub

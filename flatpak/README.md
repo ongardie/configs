@@ -2,7 +2,7 @@
 applications as containers for Linux. It runs the applications in a sandbox
 with possibly limited permissions.
 
-## Install/Configure Flatpak Itself
+## Install/configure Flatpak itself
 
 ```sh
 sudo apt install flatpak
@@ -11,7 +11,7 @@ sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub
 
 You may need to log out and back in or reboot.
 
-### Flatpak Updates
+### Flatpak updates
 
 > Warning: It is generally not a good idea to run unattended updates via
 > systemd, as the applications can get new permissions without the user aware
@@ -21,12 +21,38 @@ You may need to log out and back in or reboot.
 Still, this is probably better than no updates.
 
 ```sh
-sudo cp etc/systemd/user/* /etc/systemd/user/
+sudo cp -ai etc/systemd/user/flatpak-update.{service,timer} /etc/systemd/user/
 systemctl --user daemon-reload
 systemctl --user enable --now flatpak-update.timer
 ```
 
-## Installing Software with Flatpak
+## Installing software with Flatpak
+
+You can search for software on [Flathub](https://flathub.org/).
+
+### Chrome (unofficial)
+
+```sh
+flatpak install flathub com.google.Chrome
+```
+
+### Firefox
+
+```sh
+flatpak install flathub org.mozilla.firefox
+```
+
+To work around an [issue](https://bugzilla.mozilla.org/show_bug.cgi?id=1621915)
+with Firefox preferring bitmap fonts:
+
+```sh
+mkdir -p .var/app/org.mozilla.firefox/config/fontconfig/
+cp -i fonts.conf .var/app/org.mozilla.firefox/config/fontconfig/fonts.conf
+```
+
+You'll need to restart Firefox for it to pick this up.
+
+See [../firefox.md](../firefox.md) for configuring Firefox.
 
 ### Flatseal
 
@@ -44,8 +70,24 @@ flatpak ps
 flatpak enter INSTANCE /bin/bash
 ```
 
-### Zoom
+### Signal (unofficial)
+
+```sh
+flatpak install flathub org.signal.Signal
+```
+
+### Spotify (unofficial)
+
+```sh
+flatpak install flathub com.spotify.Client
+```
+
+### Zoom (unofficial)
 
 ```sh
 flatpak install flathub us.zoom.Zoom
 ```
+
+## Set up convenient executables
+
+Run `./flatpak-wrappers.sh`.

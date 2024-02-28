@@ -1,0 +1,11 @@
+[Unit]
+Description=Runs Restic backups every 2 hours
+
+[Timer]
+Unit=restic.service
+OnUnitInactiveSec=120m
+AccuracySec=10s
+Persistent=true
+
+[Install]
+WantedBy=timers.target

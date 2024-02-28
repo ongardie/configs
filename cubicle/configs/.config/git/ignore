@@ -1,0 +1,14 @@
+*.bck
+*.pyc
+.*.sw?
+.Rhistory
+.mypy_cache/
+.nobck
+.sw?
+.vscode/
+.~lock.*\#
+__pycache__/
+cachegrind.out.*
+callgrind.out.*
+extra*
+tags

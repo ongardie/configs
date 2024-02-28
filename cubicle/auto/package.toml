@@ -1,0 +1,4 @@
+[depends]
+apt-binary = {}
+configs = {}
+git-user = {}

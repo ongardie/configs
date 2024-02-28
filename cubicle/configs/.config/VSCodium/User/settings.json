@@ -1,0 +1,156 @@
+// This contains settings for the VS Code or VSCodium editor. It's allowed to
+// have comments (open it as "JSON with Comments"). It goes in
+// `~/.config/VSCodium/User/settings.json` or similar on Linux.
+{
+  "cSpell.allowCompoundWords": true,
+  "cSpell.diagnosticLevel": "Hint",
+  "cSpell.enableFiletypes": [
+    "dockercompose",
+    "dockerfile",
+    "ini",
+    "lua",
+    "makefile",
+    "properties",
+    "shellscript",
+    "sql",
+    "tex",
+    "toml",
+    "Vimscript",
+    "xml",
+  ],
+  "cSpell.language": "en,en-US",
+  "cSpell.userWords": [
+    "clippy",
+    "debootstrap",
+    "distro",
+    "dpkg",
+    "flatpak",
+    "gvim",
+    "ipython",
+    "journalctl",
+    "luks",
+    "mplayer",
+    "noob",
+    "nvme",
+    "ongardie",
+    "ongaro",
+    "panic",
+    "posix",
+    "pthreads",
+    "tcpdump",
+    "temporary",
+    "tldr",
+    "tmpdir",
+    "uefi",
+    "unmount",
+    "unmounting",
+    "vimrc",
+    "xrandr",
+    "xscreensaver",
+    "zfunc",
+    "zstd"
+  ],
+
+  "diffEditor.ignoreTrimWhitespace": false,
+
+  "editor.acceptSuggestionOnCommitCharacter": false,
+  "editor.autoClosingBrackets": "never",
+  "editor.autoClosingComments": "never",
+  "editor.autoClosingQuotes": "never",
+  "editor.autoClosingDelete": "never",
+  "editor.autoClosingOvertype": "never",
+  "editor.find.cursorMoveOnType": false,
+  // This is really nice on projects that do it, but really awful when you
+  // accidentally run it on projects that shouldn't be re-formatted. So set
+  // this to true for specific projects only.
+  "editor.formatOnSave": false,
+  "editor.minimap.enabled": false,
+  "editor.renderWhitespace": "boundary",
+  "editor.rulers": [79],
+  "eslint.run": "onSave",
+  "editor.stickyScroll.enabled": true,
+  "editor.suggest.matchOnWordStartOnly": false,
+
+  "eslint.workingDirectories": [{ "mode": "auto" }],
+
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "files.watcherExclude": {
+    "**/.git/**": true,
+    "**/.rpt2_cache/**": true,
+    "**/node_modules/**": true,
+    "**/env/**": true
+  },
+
+  "go.formatTool": "goimports",
+
+  "html.autoClosingTags": false,
+
+  "javascript.autoClosingTags": false,
+  "javascript.suggest.autoImports": false,
+
+  "outline.showBooleans": false,
+  "outline.showConstants": false,
+  "outline.showEnumMembers": false,
+  "outline.showFields": false,
+  "outline.showNull": false,
+  "outline.showNumbers": false,
+  "outline.showProperties": false,
+  "outline.showStrings": false,
+  "outline.showTypeParameters": false,
+  "outline.showVariables": false,
+
+  "prettier.requireConfig": true,
+
+  "python.dataScience.askForKernelRestart": false,
+
+  "rust-analyzer.completion.autoimport.enable": false,
+  "rust-analyzer.inlayHints.maxLength": 40,
+  "rust-analyzer.checkOnSave.command": "clippy",
+
+  "telemetry.telemetryLevel": "off",
+
+  "typescript.autoClosingTags": false,
+  "typescript.suggest.autoImports": false,
+  "typescript.surveys.enabled": false,
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+
+  "update.mode": "none",
+
+  "vim.handleKeys": {
+    "<C-f>": false,
+    "<C-p>": false
+  },
+  "vim.hlsearch": true,
+  "vim.ignorecase": false,
+  "vim.joinspaces": false,
+  "vim.normalModeKeyBindings": [
+    // Make j and k respect line wrapping.
+    {
+      "before": ["j"],
+      "after": ["g", "j"]
+    },
+    {
+      "before": ["k"],
+      "after": ["g", "k"]
+    }
+  ],
+  "vim.textwidth": 79,
+
+  "window.zoomLevel": 1,
+
+  "workbench.colorCustomizations": {
+    "editorInlayHint.background": "#ffffff00",
+    "editorInlayHint.foreground": "#ffffff50"
+  },
+  "workbench.editor.closeOnFileDelete": true,
+  "workbench.editor.decorations.badges": false,
+  "workbench.startupEditor": "none",
+  "workbench.tree.indent": 16,
+  "workbench.tree.renderIndentGuides": "always",
+
+  // assuming Cubicle provides enough safety
+  "security.workspace.trust.enabled": false,
+}

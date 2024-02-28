@@ -1,0 +1,22 @@
+# This file tries to recreate default Debian priorities, so that 99blackhole
+# can pin everything unknown at priority -1.
+
+Package: *
+Pin: origin *.debian.org
+Pin: release n=bookworm
+Pin-Priority: 500
+
+Package: *
+Pin: origin *.debian.org
+Pin: release n=bookworm-security
+Pin-Priority: 500
+
+Package: *
+Pin: origin *.debian.org
+Pin: release n=bookworm-updates
+Pin-Priority: 500
+
+Package: *
+Pin: origin *.debian.org
+Pin: release n=bookworm-backports
+Pin-Priority: 100

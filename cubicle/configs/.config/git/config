@@ -1,0 +1,17 @@
+[alias]
+    amend = commit --amend --reset-author
+    fa = fetch --all
+    ff = merge --ff-only
+    lola = log --graph --oneline --decorate --all
+[init]
+    defaultBranch = main
+[pull]
+    ff = only
+[push]
+    default = nothing
+[rebase]
+    autostash = true
+
+# Fill in `user.name` and `user.email` in the file `user.conf`.
+[include]
+    path = user.conf
