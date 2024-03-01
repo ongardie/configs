@@ -35,8 +35,8 @@ If you want, you can create a ZFS dataset for the user's home directory.
 ```sh
 zfs create rpool/home/$NEWUSER
 find /etc/skel -mindepth 1 -maxdepth 1 -exec cp -av {} /home/$NEWUSER \;
-chown -R $NEWUSER:$NEWUSER /home/$NEWUSER
 sudo adduser --disabled-password --no-create-home $NEWUSER
+chown -R $NEWUSER:$NEWUSER /home/$NEWUSER
 ```
 
 Otherwise, to create a normal home directory:

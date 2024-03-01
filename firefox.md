@@ -56,8 +56,6 @@ Browser Privacy > Passwords > Ask to save passwords: no
 
 Browser Privacy > Autofill > Save and fill payment methods: no
 
-Browser Privacy > Autofill > Save and fill payment methods: no
-
 Browser Privacy > Address Bar -- Firefox Suggest > Suggestions from sponsors: no
 
 Permissions > Location > Settings > Block new requests asking to access your location: yes

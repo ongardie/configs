@@ -66,6 +66,7 @@ for mountpoint in $(findmnt --types zfs --output target --list --noheadings); do
 done
 
 # Give restic read-write access to its cache dir.
+mkdir -p "$HOME/.cache/restic"
 args=("${args[@]}" --bind "$HOME/.cache/restic" "$HOME/.cache/restic")
 
 # Give restic read-write access to a subdir within $TMPDIR.

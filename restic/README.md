@@ -15,7 +15,7 @@ to set these up in a wrapper script. This script is also useful for making
 restic work with ZFS snapshots and potentially lying about your hostname.
 
 ```sh
-ln -s $(pwd)/bin/restic.sh ~/bin/
+cp -aiv bin/restic.sh ~/bin/
 restic.sh --help # generate the template
 sensible-editor ~/.config/restic.env # fill out the template
 restic.sh snapshots --compact --latest 3
@@ -26,7 +26,7 @@ restic.sh snapshots --compact --latest 3
 The backup script will call the wrapper to take new backups.
 
 ```sh
-ln -s $(pwd)/bin/restic-backup.sh ~/bin/
+cp -aiv bin/restic-backup.sh ~/bin/
 ~/bin/restic-backup.sh
 ```
 

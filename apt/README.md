@@ -41,7 +41,7 @@ disable this if you're ok with occasional breakage; try to review what you're
 missing as you install new packages.
 
 ```sh
-echo 'Apt::Install-Recommends "0";' | sudo tee > /etc/apt/apt.conf.d/90recommends
+echo 'Apt::Install-Recommends "0";' | sudo tee /etc/apt/apt.conf.d/90recommends
 ```
 
 ## Set up automatic updates

@@ -63,7 +63,7 @@ you may need if the screensaver kicks in.
 
 ## Shell from another computer
 
-Start an SSH server on the live image:
+Connect to the internet. Start an SSH server on the live image:
 
 ```sh
 sudo apt update
@@ -501,6 +501,14 @@ cleanly. One option is:
 umount -R /mnt
 ```
 
+Try:
+
+```sh
+umount -l /mnt/dev
+```
+
+if that's busy.
+
 Another option is:
 ```sh
 findmnt --submounts /mnt --list --output target,fstype --noheadings | \
@@ -514,8 +522,13 @@ Then run:
 zpool export rpool
 ```
 
-If that fails to export cleanly, don't worry about it too much. It just adds a
-step below.
+That will proably fail to export cleanly with the message:
+
+```
+cannot export 'rpool': pool is busy
+```
+
+If so, don't worry about it too much. It just adds a step below.
 
 ```sh
 systemctl poweroff

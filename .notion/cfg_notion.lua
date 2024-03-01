@@ -56,8 +56,7 @@ defwinprop{
   userpos=true,
 }
 
--- Other panel popup windows (like the clock's calendar) still don't seem to
--- float in the correct place.
+-- Other panel popup windows (like the clock's calendar).
 defwinprop {
   class="Xfce4-panel",
   name="",
