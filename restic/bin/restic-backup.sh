@@ -11,6 +11,7 @@ do_backup() {
         --exclude "$HOME/.cache/" \
         --exclude "$HOME/.debug/" \
         --exclude "$HOME/.local/share/containers/" \
+        --exclude "$HOME/.local/share/flatpak/" \
         --exclude "$HOME/.local/share/lxc/" \
         --exclude "$HOME/.local/share/libvirt/images/" \
         --exclude "$HOME/.local/share/Trash/" \
