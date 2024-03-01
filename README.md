@@ -17,7 +17,7 @@ Some of the files in this repo begin with a dot, so use `ls -a` to see them.
 - [`ufw.md`](./ufw.md) has instructions for setting up a firewall.
 - [`ssh.md`](./ssh.md) has instructions for setting up an SSH server.
 - [`wireguard.md`](./wireguard.md) has instructions for setting up a VPN.
-- [`user_account.md`](./user_account.md) has instructions for adding system
+- [`user-account.md`](./user-account.md) has instructions for adding system
   users.
 
 ## Debian packages
