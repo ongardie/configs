@@ -430,11 +430,14 @@ cat /etc/zfs/zfs-list.cache/rpool
 ## Set up the bootloader (GRUB 2)
 
 ```sh
-mv /etc/default/grub /etc/default/grub.orig
+mv -i /etc/default/grub /etc/default/grub.orig
 {
-    sed -E '/^GRUB_CMDLINE_LINUX=""$/ s@""@"root=ZFS=rpool/ROOT/debian"@' < /etc/default/grub.orig
+    sed -E \
+        -e '/^GRUB_CMDLINE_LINUX=""$/ s@""@"root=ZFS=rpool/ROOT/debian"@' \
+        -e 's/^#(GRUB_DISABLE_LINUX_UUID=true)$/\1/' \
+        < /etc/default/grub.orig
     echo
-    echo '# Disables hook in /etc/grub.d/10_linux that assumes ZFS / implies ZFS /boot'
+    echo '# Disables hook in /etc/grub.d/10_linux that assumes ZFS root implies ZFS /boot'
     echo 'GRUB_FS="not-entirely-zfs"'
 } > /etc/default/grub
 ! diff -u /etc/default/grub.orig /etc/default/grub
@@ -453,16 +456,12 @@ menuentry 'Debian GNU/Linux' --class debian --class gnu-linux --class gnu --clas
 	insmod part_gpt
 	insmod ext2
 	search --no-floppy --fs-uuid --set=root 6fb441ef-c9ed-4df8-8f94-51a61b314603
-	echo	'Loading Linux 6.1.0-17-amd64 ...'
-	linux	/vmlinuz-6.1.0-17-amd64 root=PARTUUID=30baf6d7-faec-460b-a642-fda89ff852d4 ro root=ZFS=rpool/ROOT/debian quiet
+	echo	'Loading Linux 6.1.0-18-amd64 ...'
+	linux	/vmlinuz-6.1.0-17-amd64 ro root=ZFS=rpool/ROOT/debian quiet
 	echo	'Loading initial ramdisk ...'
-	initrd	/initrd.img-6.1.0-17-amd64
+	initrd	/initrd.img-6.1.0-18-amd64
 }
 ```
-
-Note that the `linux` line sets `root=` twice. The first one is
-[ignored, hopefully](https://unix.stackexchange.com/questions/544224/evaluation-order-of-duplicated-kernel-parameters).
-
 
 ## Set a root password
 
