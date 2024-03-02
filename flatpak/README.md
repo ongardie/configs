@@ -36,6 +36,14 @@ You can search for software on [Flathub](https://flathub.org/).
 flatpak install --user flathub com.google.Chrome
 ```
 
+### D-Spy
+
+[D-Spy](https://gitlab.gnome.org/GNOME/d-spy) is a D-Bus browser/GUI.
+
+```sh
+flatpak install --user org.gnome.dspy
+```
+
 ### Firefox
 
 ```sh
