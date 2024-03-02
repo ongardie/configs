@@ -197,7 +197,11 @@ def zsh(args, script_path):
 
 
 def xsessionrc(args, script_path):
-    copy_glob(args, script_path, ".xsessionrc", Path.home())
+    maybe_copy_file(args, script_path / ".xsessionrc", Path("~/.xsessionrc"))
+
+
+def xscreensaver(args, script_path):
+    maybe_copy_file(args, script_path / ".xscreensaver", Path("~/.xscreensaver"))
 
 
 def vim(args, script_path):
@@ -329,6 +333,7 @@ COMPONENTS = {
     "bash": Component(bash, needs_cubicle),
     "zsh": Component(zsh, needs_cubicle),
     "xsessionrc": Component(xsessionrc),
+    "xscreensaver": Component(xscreensaver),
     "vim": Component(vim),
     "git": Component(git),
     "ipython": Component(ipython),
