@@ -28,6 +28,7 @@ kazam           # tool to record screencasts
 kdenlive        # video editor
 libnotify-bin   # CLI tool to show desktop notifications (`notify-send`)
 libreoffice     # office suite (document editor, spreadsheet program, etc)
+libglib2.0-bin  # to modify GNOME settings (`gsettings`)
 lightdm         # graphical display manager
 lightdm-gtk-greeter-settings    # graphical tool to edit lightdm settings
 mesa-utils      # graphics info: glxinfo, glxgears

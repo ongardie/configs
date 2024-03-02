@@ -66,6 +66,8 @@ window manager (see [`.notion`](./.notion/README.md)). An older
 [`.xsession`](./.xsession) script is an alternative to avoid some or all of
 Xfce (for more minimal setups or very resource-constrained machines).
 
+See [`hidpi.md`](./hidpi.md) for high-resolution displays.
+
 See [`flatpak`](./flatpak/README.md) for sandboxed Desktop applications.
 
 See [`firefox.md`](./firefox.md) for configuring Firefox, which I usually
