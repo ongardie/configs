@@ -27,7 +27,8 @@ I set up the panel manually like this:
 - Some launchers (terminal, browser, etc)
 - Generic Monitor for `bin/get-workspace`
 - Window Menu
-- Status Tray Plugin
+- Status Tray
+- Battery Monitor
 - PulseAudio Plugin
 - Clock (I maintained the `xfce4-datetime` plugin for a while, but the clock
   seems to have a suitable little calendar now)
