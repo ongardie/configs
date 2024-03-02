@@ -308,6 +308,11 @@ def notion(args, script_path):
     )
     maybe_copy_file(
         args,
+        script_path / "bin/backlight",
+        Path("~/bin/backlight"),
+    )
+    maybe_copy_file(
+        args,
         script_path / "bin/get-workspace",
         Path("~/bin/get-workspace"),
     )

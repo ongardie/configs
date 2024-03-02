@@ -44,6 +44,11 @@ defbindings("WScreen", {
 
     bdoc("Suspend the computer (to RAM).", "sleep"),
     kpress("Mod1+Escape", "notioncore.exec_on(_, 'systemctl suspend')"),
+
+    bdoc("Decrease brightness on laptop screen", "brightness down"),
+    kpress("XF86MonBrightnessDown", "notioncore.exec_on(_, 'backlight down')"),
+    bdoc("Increase brightness on laptop screen", "brightness up"),
+    kpress("XF86MonBrightnessUp", "notioncore.exec_on(_, 'backlight up')"),
 })
 
 -- Additional kludges

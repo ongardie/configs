@@ -1,0 +1,105 @@
+#!/bin/sh
+
+set -eu
+
+usage() {
+    cat >&2 << 'END'
+Query or adjust the screen backlight.
+
+Usage:
+    backlight [get]
+    backlight set PERCENTAGE
+    backlight down [PERCENTAGE]
+    backlight up [PERCENTAGE]
+
+This script can be hooked up to handle XF86MonBrightnessUp/Down key press
+events.
+
+It uses the systemd-logind D-BUS interface to set the brightness, so it doesn't
+need special permissions. See:
+https://www.freedesktop.org/software/systemd/man/latest/org.freedesktop.login1.html
+
+By default, it uses the first device found in /sys/class/backlight/. Set
+$DEVICE to override.
+END
+}
+
+cd /sys/class/backlight
+
+if [ -z "${DEVICE:-}" ]; then
+    for f in *; do
+        if [ "$f" != '*' ]; then
+            DEVICE=$f
+            break
+        fi
+    done
+    if [ -z "${DEVICE:-}" ]; then
+        echo 'No devices found in /sys/class/backlight/' >&2
+        exit 1
+    fi
+fi
+
+max=$(cat "$DEVICE/max_brightness")
+
+current() {
+    cat "$DEVICE/brightness"
+}
+
+set_brightness() {
+    new=$1
+    if [ "$new" -lt 0 ]; then
+        new=0
+    elif [ "$new" -gt "$max" ]; then
+        new=$max
+    fi
+    busctl call \
+        org.freedesktop.login1 \
+        /org/freedesktop/login1/session/auto \
+        org.freedesktop.login1.Session \
+        SetBrightness ssu \
+        backlight "$DEVICE" "$new"
+}
+
+print() {
+    echo "$(( 100 * $(current) / max ))%"
+}
+
+case "$#,${1:-}" in
+    0, | 1,get)
+        print
+        ;;
+
+    2,set)
+        new=${2%'%'}
+        set_brightness "$(( new * max / 100 ))"
+        print
+        ;;
+
+    1,down | 2,down)
+        old=$(current)
+        default=5
+        if [ "$old" -le "$(( max / 10 ))" ]; then
+            default=1
+        fi
+        delta=${2:-$default}
+        delta=${delta%'%'}
+        set_brightness "$(( old - delta * max / 100 ))"
+        print
+        ;;
+
+    1,up | 2,up)
+        old=$(current)
+        default=5
+        if [ "$old" -lt "$(( max / 10 ))" ]; then
+            default=1
+        fi
+        delta=${2:-$default}
+        delta=${delta%'%'}
+        set_brightness "$(( old + delta * max / 100 ))"
+        print
+        ;;
+
+    1,-h | 1,--help | *)
+        usage
+        exit 1
+esac

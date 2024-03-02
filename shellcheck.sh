@@ -9,6 +9,7 @@ shellcheck \
     "$@" \
     .xsession \
     .xsessionrc \
+    bin/backlight \
     bin/get-workspace \
     bin/update-completions
 
