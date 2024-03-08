@@ -59,6 +59,7 @@ xclip           # command-line interface to X clipboard
 xdg-desktop-portal-gtk  # important component for flatpak
 xfce4-goodies   # optional components for the Xfce desktop environment
 xfce4-notifyd   # daemon for desktop notifications
+xinput          # list and configure X input devices (keyboards, etc)
 xscreensaver    # screen saver/lock screen
 xserver-xephyr  # nested X server
 xss-lock        # configures screen to lock on events like closing laptop lid

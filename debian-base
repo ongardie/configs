@@ -56,6 +56,7 @@ strace          # interpose on system calls
 tcpdump         # sniff network packets
 time            # measure command CPU time
 tree            # list a directory tree recursively
+usbutils        # display information about USB devices (`lsusb`)
 ufw             # easy-to-configure firewall
 unattended-upgrades # automatic and periodic apt upgrade
 unzip           # de-compress .zip archives
