@@ -49,6 +49,7 @@ remmina-plugin-vnc  # VNC support for remmina
 ristretto       # image viewer
 rxvt-unicode    # basic graphical terminal emulator
 synaptic        # graphical front-end for APT
+system-config-printer   # graphical front-end for CUPS
 task-xfce-desktop   # the Xfce desktop environment (lots of dependencies)
 thunar          # graphical file manager
 tumbler-plugins-extra   # thumbnails in thunar
