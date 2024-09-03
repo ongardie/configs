@@ -20,4 +20,9 @@ END
         chmod +x "$name"
         echo "Created $PWD/$name to launch $app"
     fi
+
+    if [ "$name" =  onepassword ] && ! [ -f 1password ]; then
+        ln -s onepassword 1password
+        echo "Created $PWD/1password as alias for $PWD/onepassword"
+    fi
 done

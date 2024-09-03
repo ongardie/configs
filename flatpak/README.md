@@ -30,6 +30,14 @@ systemctl --user enable --now flatpak-update.timer
 
 You can search for software on [Flathub](https://flathub.org/).
 
+### 1Password (official)
+
+From <https://support.1password.com/install-linux/#flatpak>:
+
+```sh
+flatpak install --user https://downloads.1password.com/linux/flatpak/1Password.flatpakref
+```
+
 ### Chrome (unofficial)
 
 ```sh
