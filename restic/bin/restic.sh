@@ -48,10 +48,12 @@ fi
 # file accesses. A wishlist issue for adding this feature to Restic is
 # <https://github.com/restic/restic/issues/3557>.
 for mountpoint in $(findmnt --types zfs --output target --list --noheadings); do
-    # Skip any hidden .zfs mounts. Also skip /var/lib/docker/zfs, since it's
-    # got a lot of bind mounts and isn't backed up.
+    # Skip:
+    # - any hidden .zfs mounts,
+    # - removable media,
+    # - /var/lib/docker/zfs, since it's got a lot of bind mounts and isn't backed up.
     case "$mountpoint" in
-        */.zfs/*|/var/lib/docker/zfs/*)
+        */.zfs/*|/media/*|/var/lib/docker/zfs/*)
             continue
             ;;
     esac
