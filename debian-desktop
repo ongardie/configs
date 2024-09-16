@@ -23,9 +23,12 @@ gnome-icon-theme    # icons for GNOME
 gnumeric        # spreadsheet program
 gparted         # graphical disk partitioning tool
 graphviz        # tool to generate graph (node and edge) diagrams from text
+gvfs-backends   # access MTP devices (Android) in Thunar, etc
+gvfs-fuse       # access MTP devices (Android), etc on filesystem
 inkscape        # vector image editor
 kazam           # tool to record screencasts
 kdenlive        # video editor
+libimage-exiftool-perl  # CLI tool to read and write image metadata
 libnotify-bin   # CLI tool to show desktop notifications (`notify-send`)
 libreoffice     # office suite (document editor, spreadsheet program, etc)
 libglib2.0-bin  # to modify GNOME settings (`gsettings`)
@@ -43,6 +46,7 @@ qemu-system-gui # GUI to run virtual machines
 qemu-system-x86 # support for x86/x86-64 virtual machines
 qemu-utils      # contains `qemu-img` tools to manipulate VM disk images
 qpdfview        # tabbed PDF viewer (
+qrencode        # create QR codes
 remmina         # VNC and rdesktop client
 remmina-plugin-rdp  # rdesktop support for remmina
 remmina-plugin-vnc  # VNC support for remmina
@@ -66,3 +70,4 @@ xserver-xephyr  # nested X server
 xss-lock        # configures screen to lock on events like closing laptop lid
 xterm           # basic graphical terminal emulator
 yt-dlp          # download videos from YouTube and other sites
+zbar-tools      # read QR codes (from image file or webcam)

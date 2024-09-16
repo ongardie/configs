@@ -15,6 +15,7 @@ dosfstools      # to create FAT32 partitions
 eatmydata       # ignore fsync
 efibootmgr      # manage UEFI settings
 elinks          # command-line web browser
+exfatprogs      # format exFAT partitions
 git             # version control system
 glibc-doc       # pthreads man pages
 htop            # [monitoring] process, CPU, and memory usage
