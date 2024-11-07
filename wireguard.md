@@ -15,7 +15,7 @@ wg genkey | tee private.key | wg pubkey | tee public.key
 wg genpsk | tee private-psk.key
 ```
 
-## Set up remote
+## Set up remote (VPN server)
 
 ```sh
 sudo sensible-editor /etc/wireguard/wg0.conf
@@ -36,6 +36,8 @@ AllowedIPs = fd8d:f94d:67f9::4/128,10.0.0.4/32,10.11.12.4/32 # TODO
 PresharedKey = SECRET
 ```
 
+### VPN server setup
+
 This isn't really a tutorial on how to set up Wireguard, but my well-connected
 server's header looks like this:
 
@@ -48,8 +50,18 @@ PostUp = ip6tables -A FORWARD -i wg0 -j ACCEPT; iptables -A FORWARD -i wg0 -j AC
 PostDown = ip6tables -D FORWARD -i wg0 -j ACCEPT; iptables -D FORWARD -i wg0 -j ACCEPT
 ```
 
+The server also needs the following sysctls set:
+```
+net.ipv4.ip_forward=1
+net.ipv6.conf.all.forwarding=1
+```
 
-## Set up local
+And, at least in my case, it needed accept_ra set to 2 to continue to get
+assigned an IPv6 address. See
+<https://hachyderm.io/@ongardie/113439226879402883>.
+
+
+## Set up local (VPN client)
 
 ```sh
 cat > wg0.conf <<EOF
