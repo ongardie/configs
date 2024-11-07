@@ -6,6 +6,7 @@ apt-file        # search for packages providing files
 aspell          # spell checker
 aspell-en       # spell checker (English dictionary)
 bash-completion # better tab completion for Bash
+bind9-dnsutils  # `dig` for DNS lookups
 bsdextrautils   # `column`, `hexdump`, `look`, etc
 build-essential # C/C++ compiler, tools
 cryptsetup      # LUKS/dm-crypt disk encryption
