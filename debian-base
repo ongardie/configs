@@ -51,6 +51,7 @@ python3-venv    # Python virtual environment manager
 python3-wheel   # Python support for wheel-formatted packages
 ripgrep         # faster, modern grep
 rlwrap          # add readline support to unmodified programs
+runsc           # gVisor, for sandboxing containers
 rsync           # remote file copying tool
 s-tui           # [monitoring] CPU usage, temperature, etc
 sqlite3         # CLI tool to manage file-based SQL databases

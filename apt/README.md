@@ -27,6 +27,11 @@ signing keys.
 curl -sS https://downloads.1password.com/linux/keys/1password.asc | sudo gpg --dearmor --output /usr/share/keyrings/1password-archive-keyring.gpg
 ```
 
+[gVisor](https://gvisor.dev/docs/user_guide/install/):
+```sh
+curl -sS https://gvisor.dev/archive.key | sudo gpg --dearmor --output /usr/share/keyrings/gvisor-archive-keyring.gpg
+```
+
 [Signal](https://signal.org/download/):
 
 ```sh

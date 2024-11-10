@@ -1,0 +1,6 @@
+Types: deb
+URIs: https://storage.googleapis.com/gvisor/releases
+Suites: release
+Components: main
+Signed-By: /usr/share/keyrings/gvisor-archive-keyring.gpg
+Architectures: amd64
