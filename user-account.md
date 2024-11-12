@@ -10,7 +10,7 @@ Change this line:
 
 ```diff
 -%sudo   ALL=(ALL:ALL) ALL
-+%sudo   ALL=NOPASSWD: ALL
++%sudo   ALL=(ALL:ALL) NOPASSWD: ALL
 ```
 
 ## Create system groups
