@@ -19,6 +19,7 @@ elinks          # command-line web browser
 exfatprogs      # format exFAT partitions
 git             # version control system
 glibc-doc       # pthreads man pages
+gpg             # encryption tool
 htop            # [monitoring] process, CPU, and memory usage
 hwinfo          # show information about hardware
 iotop           # [monitoring] disk read/write throughput by process
