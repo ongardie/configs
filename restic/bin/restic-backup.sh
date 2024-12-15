@@ -6,8 +6,7 @@ cd
 export PATH="$HOME/bin:$PATH"
 
 do_backup() {
-    RESTIC_HOME_SNAPSHOT=restic \
-        restic.sh backup \
+    restic.sh backup \
         --exclude "$HOME/.cache/" \
         --exclude "$HOME/.debug/" \
         --exclude "$HOME/.local/share/containers/" \
