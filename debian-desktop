@@ -47,7 +47,7 @@ pipewire-audio  # sound daemon and adapters
 qemu-system-gui # GUI to run virtual machines
 qemu-system-x86 # support for x86/x86-64 virtual machines
 qemu-utils      # contains `qemu-img` tools to manipulate VM disk images
-qpdfview        # tabbed PDF viewer (
+qpdfview        # tabbed PDF viewer (Qt)
 qrencode        # create QR codes
 remmina         # VNC and rdesktop client
 remmina-plugin-rdp  # rdesktop support for remmina

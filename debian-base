@@ -34,6 +34,7 @@ llvm            # compiler, linker, interpreter
 lshw            # show information about hardware
 lsof            # [monitoring] show open files by processes
 lz4             # fast compression tool
+manpages-dev    # development-related man pages
 manpages-posix-dev  # POSIX standard man pages
 nano            # basic command-line text editor
 ncal            # displays a calendar on the command-line (`cal`)
