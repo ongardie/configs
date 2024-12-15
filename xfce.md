@@ -1,8 +1,14 @@
 # Xfce desktop environment
 
-Copy `.config/xfce4/terminal/terminalrc` for a color theme in `xfce4-terminal`.
+## Terminal colors
 
-To use [Notion](./.notion/README.md):
+Copy `.config/xfce4/terminal/terminalrc` for a color theme in `xfce4-terminal`.
+(If the directory and file do not exist already, you may create it, but you'll
+probably need to exit the terminal for the colors to take effect.)
+
+## Notion
+
+To use the [Notion window manager](./.notion/README.md):
 
 ```sh
 xfconf-query -c xfce4-session -p /sessions/Failsafe/Client0_Command -n -a -t string -s notion
@@ -12,6 +18,8 @@ xfconf-query -c xfce4-session -p /sessions/Failsafe/Client4_Command -n -a -t str
 The commands are based on <https://wiki.xfce.org/howto/other_window_manager>.
 The first replaces `xfwm4` with `notion` in the default session, and the second
 replaces `xfdesktop` (displays wallpaper) with `true` (exits immediately).
+
+Then, log out and back in.
 
 ## Panel
 

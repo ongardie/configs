@@ -21,6 +21,7 @@ You may need to log out and back in or reboot.
 Still, this is probably better than no updates.
 
 ```sh
+mkdir -p ~/.config/systemd/user/
 cp -ai .config/systemd/user/flatpak-update.{service,timer} ~/.config/systemd/user/
 systemctl --user daemon-reload
 systemctl --user enable --now flatpak-update.timer
