@@ -69,6 +69,16 @@ cp -i fonts.conf ~/.var/app/org.mozilla.firefox/config/fontconfig/fonts.conf
 
 You'll need to restart Firefox for it to pick this up.
 
+Set Firefox as the default web browser:
+
+```sh
+xdg-mime default org.mozilla.firefox.desktop text/html
+xdg-mime default org.mozilla.firefox.desktop x-scheme-handler/http
+xdg-mime default org.mozilla.firefox.desktop x-scheme-handler/https
+```
+
+(You can check these with `xdg-mime query text/html`, etc.)
+
 See [../firefox.md](../firefox.md) for configuring Firefox.
 
 ### Flatseal
