@@ -157,6 +157,10 @@ a lockup ([issue #7734](https://github.com/zfsonlinux/zfs/issues/7734)), so
 avoid that. If you don't want hibernation, you may be able to use an ephemeral
 key to encrypt the swap; these instructions use dm-crypt and LUKS instead.
 
+Also note that hibernation is also not always successful. As of 2024, it
+sometimes takes two attempts. See
+[issue #10924](https://github.com/openzfs/zfs/issues/10924).
+
 These instructions use ZFS native encryption. I think that provides some
 authentication for the data, so it may be better than layering ZFS atop
 dm-crypt.
