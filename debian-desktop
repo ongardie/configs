@@ -31,6 +31,7 @@ kazam           # tool to record screencasts
 kdenlive        # video editor
 libimage-exiftool-perl  # CLI tool to read and write image metadata
 libvirt-clients # virsh tool for managing virtual machines
+libvirt-daemon  # daemon for running virtual machines (user session mode)
 libnotify-bin   # CLI tool to show desktop notifications (`notify-send`)
 libreoffice     # office suite (document editor, spreadsheet program, etc)
 libglib2.0-bin  # to modify GNOME settings (`gsettings`)
@@ -63,6 +64,7 @@ tumbler-plugins-extra   # thumbnails in thunar
 vim-gtk3        # graphical front-end for vim (`gvim`)
 virtinst        # virt-install to create virtual machines
 virt-manager    # graphical tool to manage virtual machines
+virt-viewer     # graphical keyboard/video/mouse for virtual machines
 vlc             # video player
 xclip           # command-line interface to X clipboard
 xdg-desktop-portal-gtk  # important component for flatpak
