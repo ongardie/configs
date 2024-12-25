@@ -33,3 +33,4 @@ MiscToolbarDefault=FALSE
 MiscUseShiftArrowsToScroll=FALSE
 ScrollingLines=100000
 ScrollingOnOutput=FALSE
+ShortcutsNoHelpkey=TRUE
