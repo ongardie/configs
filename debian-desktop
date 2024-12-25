@@ -43,6 +43,7 @@ network-manager-gnome   # manage network devices and WiFi networks
 notion          # tiling window manager
 oathtool        # command-line tool to generate 2FA/MFA codes
 ovmf            # UEFI for KVM/QEMU virtual machines
+pavucontrol     # GUI for sound mixing
 pipewire-audio  # sound daemon and adapters
 qemu-system-gui # GUI to run virtual machines
 qemu-system-x86 # support for x86/x86-64 virtual machines
