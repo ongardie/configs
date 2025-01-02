@@ -87,6 +87,16 @@ gsettings set org.gnome.desktop.interface cursor-size 64
 
 Note: The `/Gtk/CursorThemeName` seems to affect Firefox in Flatpak.
 
+The above doesn't affect xfce4-session's logout dialog. For that, set
+`GDK_SCALE=2` in `~/.xsessionrc` or, if using my configs from Cubicle:
+
+```sh
+cat > .config/profile.d/50-hidpi.sh <<'END'
+#!/bin/sh
+export GDK_SCALE=2
+END
+```
+
 ## Notion
 
 Bring the title bars back down to a reasonable size:
