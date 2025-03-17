@@ -257,7 +257,7 @@ The idea is to create datasets for things you might want to snapshot or
 existing data will occupy space in existing snapshots. The `canmount=off`
 setting just makes a pass-through container for other datasets.
 
-Warning: you probably don't want to create a separete dataset for `/etc`. While
+Warning: you probably don't want to create a separate dataset for `/etc`. While
 this can work, it needs to be mounted before leaving the initramfs, which adds
 extra complications. (Otherwise, the early boot process won't have access to
 `/etc` and many things go wrong.)
@@ -465,6 +465,17 @@ menuentry 'Debian GNU/Linux' --class debian --class gnu-linux --class gnu --clas
 	echo	'Loading initial ramdisk ...'
 	initrd	/initrd.img-6.1.0-18-amd64
 }
+```
+
+## Set up Docker daemon config
+
+Docker has a
+[built-in storage driver for ZFS](https://docs.docker.com/engine/storage/drivers/zfs-driver/),
+but it doesn't work well for me. Disable it ahead of (potentially) installing Docker:
+
+```sh
+mkdir -p /etc/docker
+echo '{"storage-driver": "overlay2"}' > /etc/docker/daemon.json
 ```
 
 ## Set a root password
