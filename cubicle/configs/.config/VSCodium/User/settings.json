@@ -2,6 +2,8 @@
 // have comments (open it as "JSON with Comments"). It goes in
 // `~/.config/VSCodium/User/settings.json` or similar on Linux.
 {
+  "chat.commandCenter.enabled": false,
+
   "cSpell.allowCompoundWords": true,
   "cSpell.diagnosticLevel": "Hint",
   "cSpell.enableFiletypes": [
@@ -37,6 +39,7 @@
     "panic",
     "posix",
     "pthreads",
+    "serializability",
     "tcpdump",
     "temporary",
     "tldr",
@@ -60,10 +63,16 @@
   "editor.autoClosingDelete": "never",
   "editor.autoClosingOvertype": "never",
   "editor.find.cursorMoveOnType": false,
+
   // This is really nice on projects that do it, but really awful when you
   // accidentally run it on projects that shouldn't be re-formatted. So set
-  // this to true for specific projects only.
+  // this to true for specific projects and languages only.
   "editor.formatOnSave": false,
+  "[go][rust]": {
+    "editor.formatOnSave": true,
+  },
+
+  "editor.inlayHints.enabled": "onUnlessPressed",
   "editor.minimap.enabled": false,
   "editor.renderWhitespace": "boundary",
   "editor.rulers": [79],
@@ -148,6 +157,7 @@
   },
   "workbench.editor.closeOnFileDelete": true,
   "workbench.editor.decorations.badges": false,
+  "workbench.layoutControl.enabled": false,
   "workbench.startupEditor": "none",
   "workbench.tree.indent": 16,
   "workbench.tree.renderIndentGuides": "always",
