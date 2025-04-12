@@ -395,7 +395,7 @@ boot process may require those filesystems, for example to access `/var`.
 
 One simple approach to addressing this would be to mount more filesystems from
 the initramfs. You could do this by listing filesystems in
-`ZFS_INITRD_ADDITIONAL_DATASETS` in `/etc/init-ramfs-tools/conf.d/zfs` (or a
+`ZFS_INITRD_ADDITIONAL_DATASETS` in `/etc/initramfs-tools/conf.d/zfs` (or a
 nearby file), then running `update-initramfs -u -k all`. However, as of ZFS
 2.2.2 (in 2024), I'm unable to access snapshots for those filesystems due to
 <https://github.com/openzfs/zfs/issues/11563> or
