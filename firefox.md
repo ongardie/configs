@@ -80,5 +80,8 @@ Set `browser.tabs.inTitlebar` to `0` if you're using a tiling window manager.
 This gets rid of the minimize/maximize/close buttons and removes the padding on
 either side of the tabs.
 
+Consider setting `full-screen-api.ignore-widgets` to `true`. This changes
+full-screen mode (F11) to hide all UI elements but not go full screen.
+
 Set `widget.non-native-theme.scrollbar.size.override` to about `25` to increase
 the scrollbar width.
