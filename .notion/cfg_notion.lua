@@ -35,6 +35,8 @@ defbindings("WScreen", {
 
     bdoc("Open python.", "python"),
     kpress(META.."P", "notioncore.exec_on(_, (XTERM or 'x-terminal-emulator') .. ' -e ipython3')"),
+    bdoc("Open qalc.", "qalc"),
+    kpress(META.."Shift+P", "notioncore.exec_on(_, (XTERM or 'x-terminal-emulator') .. ' -e qalc')"),
 
     bdoc("Take a screenshot.", "shot"),
     kpress("Print", "notioncore.exec_on(_, 'xfce4-screenshooter')"),

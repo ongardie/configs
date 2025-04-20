@@ -23,6 +23,7 @@
   "cSpell.language": "en,en-US",
   "cSpell.userWords": [
     "clippy",
+    "cpus",
     "debootstrap",
     "distro",
     "dpkg",
@@ -47,6 +48,7 @@
     "uefi",
     "unmount",
     "unmounting",
+    "VecDeque",
     "vimrc",
     "xrandr",
     "xscreensaver",
@@ -158,6 +160,7 @@
   },
   "workbench.editor.closeOnFileDelete": true,
   "workbench.editor.decorations.badges": false,
+  "workbench.editor.dragToOpenWindow": false,
   "workbench.layoutControl.enabled": false,
   "workbench.startupEditor": "none",
   "workbench.tree.indent": 16,

@@ -35,8 +35,12 @@ I set up the panel manually like this:
 - Some launchers (terminal, browser, etc)
 - Generic Monitor for `bin/get-workspace`
 - Window Menu
-- Status Tray
-- Battery Monitor
+- Status Tray (including NetworkManager, Blueman)
 - PulseAudio Plugin
+- Launcher to test audio (`audio-speakers` icon):
+  ```sh
+  mplayer /usr/share/sounds/freedesktop/stereo/service-login.oga
+  ```
+- Battery Monitor
 - Clock (I maintained the `xfce4-datetime` plugin for a while, but the clock
   seems to have a suitable little calendar now)
