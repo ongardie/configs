@@ -1,0 +1,14 @@
+[colors]
+"diff removed token" = { bg = "#221111", underline = false }
+"diff added token" = { bg = "#002200", underline = false }
+
+[template-aliases]
+# Show author timestamps by default, since that's what Git does.
+'commit_timestamp(commit)' = 'commit.author().timestamp()'
+'format_short_id(id)' = 'id.shortest(5)'
+'format_short_signature(signature)' = 'signature.name()'
+
+[ui]
+default-command = "log"
+merge-editor = ":builtin"
+

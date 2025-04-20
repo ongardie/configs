@@ -85,6 +85,7 @@
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
   "files.watcherExclude": {
+    "**/.jj/**": true,
     "**/.git/**": true,
     "**/.rpt2_cache/**": true,
     "**/node_modules/**": true,
