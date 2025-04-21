@@ -2,6 +2,9 @@
 .config/VSCodium/User/settings.json
 .config/git/config
 .config/git/ignore
+.config/nushell/autoload/11-configs-aliases.nu
+.config/nushell/autoload/20-configs-vars.nu
+.config/nushell/autoload/80-vi.nu
 .config/profile.d/20-configs-vars.sh
 .config/shrc.d/11-configs-aliases.sh
 .config/shrc.d/50-free.sh

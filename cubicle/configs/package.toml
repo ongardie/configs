@@ -1,3 +1,10 @@
 [depends]
 configs-interactive = {}
 zsh = {}
+
+[depends.crates-io]
+nu = {}
+
+[depends.debian]
+bat = {}
+fd-find = {}
