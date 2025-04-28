@@ -268,16 +268,23 @@ def sqlite(args, script_path):
 
 def apt_binary(args, script_path):
     package = args.cubicle / "packages/apt-binary"
-    maybe_copy_file(
+    copy_glob(
         args,
-        package / "bin/apt-binary",
-        Path("~/bin/apt-binary"),
+        package / "bin",
+        "apt-binary*",
+        Path("~/bin"),
     )
     copy_glob(
         args,
         package / "bashrc.d",
         "*.bash",
         Path("~/.config/bashrc.d"),
+    )
+    copy_glob(
+        args,
+        package / "shrc.d",
+        "*.sh",
+        Path("~/.config/shrc.d"),
     )
     copy_glob(
         args,
