@@ -6,7 +6,7 @@
 
   "cSpell.allowCompoundWords": true,
   "cSpell.diagnosticLevel": "Hint",
-  "cSpell.enableFiletypes": [
+  "cSpell.enabledFiletypes": [
     "dockercompose",
     "dockerfile",
     "ini",
@@ -45,10 +45,11 @@
     "temporary",
     "tldr",
     "tmpdir",
+    "trixie",
     "uefi",
     "unmount",
     "unmounting",
-    "VecDeque",
+    "vecdeque",
     "vimrc",
     "xrandr",
     "xscreensaver",
