@@ -117,9 +117,9 @@
 
   "python.dataScience.askForKernelRestart": false,
 
+  "rust-analyzer.check.command": "clippy",
   "rust-analyzer.completion.autoimport.enable": false,
   "rust-analyzer.inlayHints.maxLength": 40,
-  "rust-analyzer.checkOnSave.command": "clippy",
 
   "telemetry.telemetryLevel": "off",
 
