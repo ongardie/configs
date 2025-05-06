@@ -2,7 +2,7 @@
     amend = commit --amend --reset-author
     fa = fetch --all
     ff = merge --ff-only
-    lola = log --graph --oneline --decorate --all
+    lola = log --graph --oneline --decorate --exclude 'refs/jj/*' --all
 [init]
     defaultBranch = main
 [pull]

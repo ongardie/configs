@@ -2,6 +2,10 @@
 "diff removed token" = { bg = "#221111", underline = false }
 "diff added token" = { bg = "#002200", underline = false }
 
+[revset-aliases]
+# Set all remote bookmarks (commits pushed to remote branches) to be immutable.
+'immutable_heads()' = "builtin_immutable_heads() | remote_bookmarks()"
+
 [template-aliases]
 # Show author timestamps by default, since that's what Git does.
 'commit_timestamp(commit)' = 'commit.author().timestamp()'
@@ -11,4 +15,3 @@
 [ui]
 default-command = "log"
 merge-editor = ":builtin"
-
