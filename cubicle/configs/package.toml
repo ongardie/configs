@@ -1,11 +1,10 @@
 [depends]
 bat = {}
 configs-interactive = {}
+jj = {}
 just = {}
+nushell = {}
 zsh = {}
-
-[depends.crates-io]
-nu = {}
 
 [depends.debian]
 fd-find = {}
