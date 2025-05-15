@@ -12,7 +12,7 @@ following components:
 | motherboard | [Gigabyte B550M DS3H](https://www.gigabyte.com/Motherboard/B550M-DS3H-rev-10-11-12-13) |
 | RAM         | [Corsair Vengeance LPX 2 x 16GB DDR4](https://www.corsair.com/us/en/p/memory/cmk32gx4m2b3200c16/vengeancea-lpx-32gb-2-x-16gb-ddr4-dram-3200mhz-c16-memory-kit-black-cmk32gx4m2b3200c16#tab-techspecs) |
 | serial      | [StarTech PLATE9M16](https://www.startech.com/en-us/cables/plate9m16) |
-| SSD         | [Western Digital WD_BLACK SN770 NMVe 2TB](https://www.westerndigital.com/products/internal-drives/wd-black-sn770-nvme-ssd?sku=WDS200T3X0E) |
+| SSD         | [Western Digital WD_BLACK SN770 NMVe 2TB](https://www.westerndigital.com/products/internal-drives/wd-black-sn770-nvme-ssd?sku=WDS200T3X0E) (primary) and Toshiba KXG50PNV2T04 2TB (secondary) |
 | wifi        | [TP-Link Archer TX50E (WiFi 6, Bluetooth 5.0)](https://www.tp-link.com/us/home-networking/pci-adapter/archer-tx50e/) |
 
 The graphics card blocks the small PCIEx1 slot, so the wifi card had to go into
