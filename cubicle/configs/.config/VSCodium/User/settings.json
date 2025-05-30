@@ -79,6 +79,7 @@
   },
 
   "editor.inlayHints.enabled": "onUnlessPressed",
+  "editor.inlayHints.maximumLength": 20,
   "editor.minimap.enabled": false,
   "editor.renderWhitespace": "boundary",
   "editor.rulers": [79],
@@ -128,6 +129,12 @@
   "telemetry.telemetryLevel": "off",
 
   "typescript.autoClosingTags": false,
+  "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
+  "typescript.inlayHints.parameterNames.enabled": "all",
+  "typescript.inlayHints.parameterTypes.enabled": true,
+  "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
+  "typescript.inlayHints.variableTypes.enabled": true,
+  "typescript.inlayHints.enumMemberValues.enabled": true,
   "typescript.suggest.autoImports": false,
   "typescript.surveys.enabled": false,
   "[typescript]": {
