@@ -1,3 +1,8 @@
+Package: qemu-* seabios
+Pin: origin *.debian.org
+Pin: release n=bookworm-backports
+Pin-Priority: 570
+
 Package: yt-dlp
 Pin: origin *.debian.org
 Pin: release n=bookworm-backports
