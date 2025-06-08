@@ -1,0 +1,4 @@
+Package: yt-dlp
+Pin: origin *.debian.org
+Pin: release n=bookworm-backports
+Pin-Priority: 570
