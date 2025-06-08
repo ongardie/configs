@@ -1,7 +1,6 @@
-# These come from
-# https://packages.debian.org/source/bookworm-backports/zfs-linux. Backports is
+# Packages generated from the source package `zfs-linux`. Backports is
 # preferred to get ZFS bug fixes.
 Package: libnvpair3linux libpam-zfs libuutil3linux libzfs* libzpool* python3-pyzfs pyzfs-doc zfs*
 Pin: origin *.debian.org
-Pin: release n=bookworm-backports
+Pin: release n=trixie-backports
 Pin-Priority: 570

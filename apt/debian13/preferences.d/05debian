@@ -3,20 +3,20 @@
 
 Package: *
 Pin: origin *.debian.org
-Pin: release n=bookworm
+Pin: release n=trixie
 Pin-Priority: 500
 
 Package: *
 Pin: origin *.debian.org
-Pin: release n=bookworm-security
+Pin: release n=trixie-security
 Pin-Priority: 500
 
 Package: *
 Pin: origin *.debian.org
-Pin: release n=bookworm-updates
+Pin: release n=trixie-updates
 Pin-Priority: 500
 
 Package: *
 Pin: origin *.debian.org
-Pin: release n=bookworm-backports
+Pin: release n=trixie-backports
 Pin-Priority: 100
