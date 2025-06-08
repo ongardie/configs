@@ -1,6 +1,7 @@
 # Brother HL-5140 printer
 
-Single-sided, grayscale, USB laser printer.
+Single-sided, grayscale, USB laser printer. Manufactured 2005, purchased as
+refurbished before 2007, used until 2025.
 
 ```sh
 sudo apt install printer-driver-brlaser
