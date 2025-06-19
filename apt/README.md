@@ -1,7 +1,7 @@
 The files in this directory are meant to be installed in `/etc/apt/` on a
-Debian 12 (Bookworm) or Debian 13 (Trixie) system. See also the `debian-base`
-and `debian-desktop` package lists in the root of this repository, which
-contain lists of useful packages.
+Debian 12 (Bookworm) or Debian 13 (Trixie) system. See also
+`debian-packages.sh` in the root of this repository, which contains lists of
+useful packages.
 
 ## Sources
 

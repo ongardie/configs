@@ -12,8 +12,7 @@ Some of the files in this repo begin with a dot, so use `ls -a` to see them.
   Debian with ZFS.
 - [`hardware`](./hardware/) contains some reference and quirks about specific
   hardware I use.
-- [`apt`](./apt/README.md) has instructions for setting up APT for Debian
-  Bookworm.
+- [`apt`](./apt/README.md) has instructions for setting up APT for Debian.
 - [`ufw.md`](./ufw.md) has instructions for setting up a firewall.
 - [`ssh.md`](./ssh.md) has instructions for setting up an SSH server.
 - [`wireguard.md`](./wireguard.md) has instructions for setting up a VPN.
@@ -22,19 +21,9 @@ Some of the files in this repo begin with a dot, so use `ls -a` to see them.
 
 ## Debian packages
 
-[`debian-base`](./debian-base) contains useful Debian Bookworm packages for
-both servers and workstations. You can install these packages with:
-
-```sh
-sudo apt install $(sed 's/#.*//' debian-base)
-```
-
-[`debian-desktop`](./debian-desktop) contains useful packages for graphical
-desktops/laptops. You can install these packages with:
-
-```sh
-sudo apt install $(sed 's/#.*//' debian-desktop)
-```
+[`debian-packages.sh`](./debian-packages.sh) contains lists of useful Debian
+packages for both servers and workstations. Run it with no arguments for more
+info.
 
 ## CLI configuration
 
