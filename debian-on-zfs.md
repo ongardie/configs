@@ -14,10 +14,8 @@ that I've found helpful are:
 - transparent encryption,
 - snapshots,
 - transparent compression, and
-- transparent dedup (the "legacy" implementation is not recommendable for most
-  situations, but it helps on backup drives;
-  [fast dedup](https://openzfs.org/wiki/OpenZFS_Developer_Summit_2023), under
-  development, would be much better).
+- dedup (preferably the newer "fast dedup", which helps on backup drives; see
+  [blog post](https://despairlabs.com/blog/posts/2024-10-27-openzfs-dedup-is-good-dont-use-it/)).
 
 ZFS has many other features, including RAID-Z across disks and streaming
 changes over the network. I haven't used these.
@@ -48,9 +46,10 @@ do infrequently), and these instrutions help streamline that.
 
 ## Boot a live image
 
-Download a live CD image from
-<https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/>. The Xfce
-image has a nice balance of size, features, and usability.
+Download a bootable image of
+[Debian stable](https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/) or
+[Debian testing](https://cdimage.debian.org/cdimage/weekly-live-builds/amd64/iso-hybrid/).
+The Xfce image has a nice balance of size, features, and usability.
 
 Copy it to an external drive:
 
@@ -87,7 +86,7 @@ sudo -i
 
 ## Install `debootstrap`, ZFS, etc
 
-Use ZFS from backports because it has updates and bug fixes.
+For Bookworm, use ZFS from backports because it has updates and bug fixes:
 
 ```sh
 cat > /etc/apt/sources.list <<'END'
@@ -104,8 +103,38 @@ deb-src https://deb.debian.org/debian bookworm-backports main contrib non-free-f
 END
 apt update
 apt upgrade
-apt install debootstrap tree vim
+apt install debootstrap gdisk tree vim
 apt install -t bookworm-backports zfsutils-linux
+```
+
+For Trixie (still in testing at the time of this writing, so backports aren't
+yet needed or available):
+
+```sh
+cat > /etc/apt/sources.list <<'END'
+deb [trusted=yes] file:/run/live/medium trixie main non-free-firmware
+
+deb https://deb.debian.org/debian trixie main contrib non-free-firmware
+deb-src https://deb.debian.org/debian trixie main contrib non-free-firmware
+
+deb https://deb.debian.org/debian trixie-updates main contrib non-free-firmware
+deb-src https://deb.debian.org/debian trixie-updates main contrib non-free-firmware
+END
+apt update
+apt upgrade
+apt install debootstrap gdisk linux-headers-amd64 tree vim
+apt install zfsutils-linux
+```
+
+If you're unlucky, the live image's kernel image will be stale relative to the
+kernel headers available through the package lists (and you can't update the
+kernel in the live image). You can find the packages archived at a URL similar
+to <https://snapshot.debian.org/package/linux/6.12.30-1/>. Download the
+architecture-specific package, the `common` package, and the `kbuild` package,
+then install them with:
+
+```sh
+apt install ./*.deb
 ```
 
 ## Partition the disk
@@ -271,6 +300,8 @@ mount -t tmpfs tmpfs /mnt/run
 
 ## Run `debootstrap` and chroot in
 
+For Bookworm:
+
 ```sh
 debootstrap \
     --extra-suites=bookworm-updates \
@@ -278,6 +309,22 @@ debootstrap \
     bookworm \
     /mnt \
     'https://deb.debian.org/debian'
+```
+
+For Trixie:
+
+```sh
+debootstrap \
+    --extra-suites=trixie-updates \
+    --include=bsdextrautils \
+    trixie \
+    /mnt \
+    'https://deb.debian.org/debian'
+```
+
+Then:
+
+```sh
 cp -a /etc/hostid /mnt/etc/hostid
 mount --make-private --rbind /dev /mnt/dev
 mount --make-private --rbind /proc /mnt/proc
@@ -316,7 +363,11 @@ echo ⟪NAME⟫ > /etc/hostname
 echo 127.0.1.1 $(cat /etc/hostname) >> /etc/hosts
 
 rm /etc/apt/sources.list
+```
 
+For Bookworm:
+
+```sh
 cat > /etc/apt/sources.list.d/debian.sources <<'END'
 Types: deb deb-src
 URIs: https://deb.debian.org/debian
@@ -341,6 +392,30 @@ Pin: release n=bookworm-backports
 Pin-Priority: 570
 END
 
+```
+
+For Trixie (still in testing at the time of this writing, so backports aren't
+yet needed or available):
+
+```sh
+cat > /etc/apt/sources.list.d/debian.sources <<'END'
+Types: deb deb-src
+URIs: https://deb.debian.org/debian
+Suites: trixie trixie-updates trixie-backports
+Components: main contrib non-free non-free-firmware
+Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg
+
+Types: deb deb-src
+URIs: https://deb.debian.org/debian-security
+Suites: trixie-security
+Components: main contrib non-free non-free-firmware
+Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg
+END
+```
+
+Then:
+
+```sh
 apt update
 apt upgrade
 apt install \
