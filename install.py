@@ -196,6 +196,23 @@ def zsh(args, script_path):
     )
 
 
+def nushell(args, script_path):
+    configs_core = args.cubicle / "packages/configs-core"
+    configs_interactive = args.cubicle / "packages/configs-interactive"
+    configs_package = script_path / "cubicle/configs"
+
+    copy_glob(args, configs_core / "nushell", "**/*", Path("~/.config/nushell/"))
+    copy_glob(
+        args,
+        configs_interactive / "nushell",
+        "**/*",
+        Path("~/.config/nushell/autoload/"),
+    )
+    copy_glob(
+        args, configs_package / ".config/nushell", "**/*", Path("~/.config/nushell/")
+    )
+
+
 def xsessionrc(args, script_path):
     maybe_copy_file(args, script_path / ".xsessionrc", Path("~/.xsessionrc"))
 
@@ -339,6 +356,7 @@ COMPONENTS = {
     "posix shell": Component(posix_shell, needs_cubicle),
     "bash": Component(bash, needs_cubicle),
     "zsh": Component(zsh, needs_cubicle),
+    "nushell": Component(nushell, needs_cubicle),
     "xsessionrc": Component(xsessionrc),
     "xscreensaver": Component(xscreensaver),
     "vim": Component(vim),
