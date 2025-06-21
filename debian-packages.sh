@@ -66,6 +66,7 @@ if $base; then
     echo aspell         # spell checker
     echo aspell-en      # spell checker (English dictionary)
     echo bash-completion    # better tab completion for Bash
+    echo bat            # print files with syntax highlighting (`batcat`)
     echo bind9-dnsutils # `dig` for DNS lookups
     echo bsdextrautils  # `column`, `hexdump`, `look`, etc
     echo curl           # command-line HTTP client (and other protocols)
@@ -98,6 +99,7 @@ if $base; then
     echo python3-pip    # Python package manager
     echo python3-venv   # Python virtual environment manager
     echo python3-wheel  # Python support for wheel-formatted packages
+    echo qalc           # command-line calculator supporting units
     echo ripgrep        # faster, modern grep
     echo rlwrap         # add readline support to unmodified programs
     echo runsc          # gVisor, for sandboxing containers
@@ -144,6 +146,7 @@ if $hardware; then
     echo dosfstools     # to create FAT32 partitions
     echo efibootmgr     # manage UEFI settings
     echo exfatprogs     # format exFAT partitions
+    echo fbset          # configure the Linux framebuffer/console
     echo libvirt-clients    # virsh tool for managing virtual machines
     echo libvirt-daemon # daemon for running virtual machines (user session mode)
     echo nvme-cli       # manage NVMe disks (PCIe SSDs)
