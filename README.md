@@ -62,11 +62,27 @@ See [`flatpak`](./flatpak/README.md) for sandboxed Desktop applications.
 See [`firefox.md`](./firefox.md) for configuring Firefox, which I usually
 install via Flatpak.
 
-To enable audio for your user account:
+If you're missing audio for your user account under Bookworm, run:
 
 ```sh
 systemctl --user enable --now pipewire pipewire-pulse wireplumber
 ```
+
+For normal keyboards, update `/etc/default/keyboard`:
+- Set Caps Lock to behave as Control:
+  ```properties
+  XKBOPTIONS="ctrl:nocaps"
+  ```
+- Or do that and set Left Control to behave as Compose:
+  ```properties
+  XKBOPTIONS="ctrl:nocaps,compose:lctrl"
+  ```
+
+Make this take effect immediately with:
+```sh
+sudo udevadm trigger --subsystem-match=input --action=change
+```
+
 
 ## Backups
 
