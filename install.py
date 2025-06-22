@@ -311,6 +311,14 @@ def apt_binary(args, script_path):
     )
 
 
+def passphrase(args, script_path):
+    maybe_copy_file(
+        args,
+        script_path / "bin/passphrase.py",
+        Path("~/bin/passphrase.py"),
+    )
+
+
 def printargv(args, script_path):
     maybe_copy_file(
         args,
@@ -364,6 +372,7 @@ COMPONENTS = {
     "ipython": Component(ipython),
     "sqlite": Component(sqlite),
     "apt-binary": Component(apt_binary, needs_cubicle),
+    "passphrase": Component(passphrase),
     "printargv": Component(printargv),
     "notion wm": Component(notion),
     "update-completions": Component(update_completions),
