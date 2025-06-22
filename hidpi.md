@@ -79,16 +79,17 @@ sudo systemctl restart lightdm
 ```sh
 xfconf-query -c xsettings -p /Gdk/WindowScalingFactor -s 2
 xfconf-query -c xfwm4 -p /general/theme -s Default-xhdpi
-xfconf-query --channel xsettings --property /Gtk/CursorThemeName --set Adwaita
-xfconf-query --channel xsettings --property /Gtk/CursorThemeSize --set 64
+xfconf-query -c xsettings -p /Gtk/CursorThemeName -s Adwaita
+xfconf-query -c xsettings -p /Gtk/CursorThemeSize -s 64
 gsettings set org.gnome.desktop.interface cursor-theme Adwaita
 gsettings set org.gnome.desktop.interface cursor-size 64
 ```
 
 Note: The `/Gtk/CursorThemeName` seems to affect Firefox in Flatpak.
 
-The above doesn't affect xfce4-session's logout dialog. For that, set
-`GDK_SCALE=2` in `~/.xsessionrc` or, if using my configs from Cubicle:
+In Debian Bookworm, the above didn't affect xfce4-session's logout dialog. For
+that, set `GDK_SCALE=2` in `~/.xsessionrc` or, if using my configs from
+Cubicle:
 
 ```sh
 cat > .config/profile.d/50-hidpi.sh <<'END'
@@ -99,8 +100,8 @@ END
 
 ## Notion
 
-Bring the title bars back down to a reasonable size:
+You might need to change Notion's font size up or down:
 
 ```sh
-~/.notion/make_look.sh 8 > ~/.notion/look.lua
+~/.notion/make_look.sh 18 > ~/.notion/look.lua
 ```
