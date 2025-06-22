@@ -12,12 +12,14 @@ To use the [Notion window manager](./.notion/README.md):
 
 ```sh
 xfconf-query -c xfce4-session -p /sessions/Failsafe/Client0_Command -n -a -t string -s notion
+xfconf-query -c xfce4-session -p /sessions/Failsafe/Client2_Command -n -a -t string -s xfce4-panel -t string -s --disable-wm-check
 xfconf-query -c xfce4-session -p /sessions/Failsafe/Client4_Command -n -a -t string -s true
 ```
 
 The commands are based on <https://wiki.xfce.org/howto/other_window_manager>.
-The first replaces `xfwm4` with `notion` in the default session, and the second
-replaces `xfdesktop` (displays wallpaper) with `true` (exits immediately).
+The first replaces `xfwm4` with `notion` in the default session, the second
+makes `xfce4-panel` start faster, and the third replaces `xfdesktop` (displays
+wallpaper) with nothing.
 
 Then, log out and back in.
 
