@@ -299,6 +299,12 @@ def apt_binary(args, script_path):
     )
     copy_glob(
         args,
+        package / "nushell",
+        "*.nu",
+        Path("~/.config/nushell/autoload"),
+    )
+    copy_glob(
+        args,
         package / "shrc.d",
         "*.sh",
         Path("~/.config/shrc.d"),
